@@ -54,4 +54,5 @@ insert into oficina (nombre_ofi, calle_ofi, num_ofi, colonia_ofi, telefono_ofi, 
 insert into oficina (nombre_ofi, calle_ofi, num_ofi, colonia_ofi, telefono_ofi, ciudad_ofi, latitud, longitud) values ("Monterrey", "Las cruces","18", "Campo Militar", "985-513-5646", "Monterrey", "20.648903", "-98.156597");
 
 
-	insert into usuario (nombre_usr, password_usr, )
+insert into usuario (nombre_usr, password_usr, id_recurso, id_estat) values ("admin@neoris.com","admin", 1, 20);
+insert into recurso (nombre_rec) values ("Beny");
