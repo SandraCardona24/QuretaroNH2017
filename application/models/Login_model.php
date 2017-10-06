@@ -12,7 +12,7 @@ class Login_model extends CI_Model{
 	*funcion constructor de login_model
 	*/
 	public function __construct(){
-		$this->load->databases();
+		$this->load->database();
 	}
 
 	/**

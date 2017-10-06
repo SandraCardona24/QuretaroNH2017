@@ -18,6 +18,7 @@ class Login extends CI_Controller {
 	*Funcon para cargar la vista
 	*/
 	public function index(){
+		
 		$this->load->view("login_view");
 	}
 

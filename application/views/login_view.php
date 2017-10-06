@@ -8,17 +8,17 @@
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
-	<link rel="stylesheet" href="<?base_url()?>rsc/css/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/css/bootstrap.min.css">
 	<!-- Font Awesome -->
-	<link rel="stylesheet" href="<?base_url()?>rsc/css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/css/font-awesome.min.css">
 	<!-- Ionicons -->
-	<link rel="stylesheet" href="<?base_url()?>rsc/css/Ionicons/css/ionicons.min.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/css/ionicons.min.css">
 	<!-- Theme style -->
-	<link rel="stylesheet" href="<?base_url()?>rsc/css/AdminLTE.min.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/css/AdminLTE.min.css">
 	<!-- iCheck -->
-	<link rel="stylesheet" href="<?base_url()?>rsc/css/blue.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/css/blue.css">
 	<!-- Custom -->
-	<link rel="stylesheet" href="<?base_url()?>rsc/css/login.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/css/login.css">
 	<!-- Google Font -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -29,13 +29,13 @@
 
     	<div class="login-box">
           <div class="login-logo">
-            <a href="./index.html"><img src="../../rsc/img/logo.png" alt="Neoris"><!--<b>Admin</b>Neoris--></a>
+            <a href="./index.html"><img src="<?=base_url()?>rsc/img/logo.png" alt="Neoris"><!--<b>Admin</b>Neoris--></a>
           </div>
           <!-- /.login-logo -->
           <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
       
-            <form action="./index1.html" method="post">
+            <form action="<?=base_url()?>index.php/Login/userdo" method="post">
               <div class="form-group has-feedback">
                 <input id="email" type="email" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -71,11 +71,11 @@
   </div>
 
 	<!-- jQuery 3 -->
-	<script src="<?base_url()?>rsc/js/jquery.min.js"></script>
+	<script src="<?=base_url()?>rsc/js/jquery.min.js"></script>
 	<!-- Bootstrap 3.3.7 -->
-	<script src="<?base_url()?>rsc/js/bootstrap.min.js"></script>
+	<script src="<?=base_url()?>rsc/js/bootstrap.min.js"></script>
 	<!-- iCheck -->
-	<script src="<?base_url()?>rsc/js/icheck.min.js"></script>
+	<script src="<?=base_url()?>rsc/js/icheck.min.js"></script>
 	<script>
 		$(function () {
 			$('input').iCheck({
