@@ -25,23 +25,37 @@ class Login extends CI_Controller {
 	*funcion para la validaciond el usuario
 	*/
 	public function userdo(){
-		$usename = $this->input->post("username");
+		$username = $this->input->post("username");
 		$password = $this->input->post("password");
 		
-		if($usename == "" || $password =="" ){
+		if($username == "" || $password =="" ){
 			$this->session->set_flashdata('error','Los campos esta vacios =(');
 			redirect("Login");
 		}else{
 
-			$user = $this->Login_model->validateUser($usename);
+			$user = $this->Login_model->validateUser($username);
 
 			if(!is_null($user)){
 
 				if($user->PASSWORD_USR == $password){
 
+					$datos_usuario = array(
+
+						'id' => $user->ID_USUARIO,
+						'name' => $user->NOMBRE_USUARIO
+					);
+					
+					$this->session->set_userdata($datos_usuario);
+					redirect("Admin");
+
+				}else{
+
+					$this->session->set_flashdata('error','Contraseña o usuario incorrecta');
+					redirect("Login");
 				}
+
 			}else{
-				$this->session->set_flashdata('error','Los campos esta vacios =(');
+				$this->session->set_flashdata('error','El usuario no existe');
 				redirect("Login");
 			}
 

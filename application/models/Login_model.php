@@ -22,6 +22,7 @@ class Login_model extends CI_Model{
 		$this->db->select("ID_USUARIO,NOMBRE_USUARIO,PASSWORD_USR,ID_RECURSO,ID_ESTAT");
 		$this->db->from("USUARIO");
 		$this->db->where("NOMBRE_USUARIO = BINARY",$name);
+		$this->db->where("ID_ESTAT",20);
 		$query = $this->db->get();
 		return ($query->num_rows() <= 0) ? NULL : $query->row(); 
 	}
