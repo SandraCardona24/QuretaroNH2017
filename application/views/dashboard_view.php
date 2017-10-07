@@ -36,7 +36,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="<?=base_url()?>index.php/Admin" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>N</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -249,8 +249,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url()?>index.php/Recursos"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li><a href="<?=base_url()?>index.php/Recursos/Editar"><i class="fa fa-minus"></i>Editar</a></li>
+            <li><a href="<?=base_url()?>index.php/OT"><i class="fa fa-plus"></i>Agregar</a></li>
+            <li><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Editar</a></li>
           </ul>
         </li>
       </ul>

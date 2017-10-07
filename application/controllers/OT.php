@@ -11,14 +11,29 @@ class OT extends CI_Controller {
 	public function index(){
 		
 
+		$estatus = $this->getEstatus();	
+		$proyectos = $this->getProyecto();
+		$vista = $this->load->view('agregarOT_view', '', TRUE);
+		$data = array(
+			'estatus' => $estatus,
+			'proyectos' => $proyectos,
+			'vista' => $vista);
+		$this->load->view("dashboard_view", $data);
+	}
+
+		public function EditarOT(){
+		
+
 		$estatus = $this->getEstatus();
 		$ordenes = $this->getOrdenes();
 		$proyectos = $this->getProyecto();
+		$vista = $this->load->view('editarOT_view', '', TRUE);
 		$data = array(
 			'estatus' => $estatus,
 			'ordenes' => $ordenes,
-			'proyectos' => $proyectos);
-		$this->load->view("ot_view", $data);
+			'proyectos' => $proyectos,
+			'vista' => $vista);
+		$this->load->view("dashboard_view", $data);
 	}
 
 	public function getEstatus() {
