@@ -1,0 +1,25 @@
+@media (max-width: 510px) {
+    
+    .login-box {
+        width: 350;
+        height: 400px;
+    }
+
+    #chartdiv {
+        width: 300;
+        height: 300px;
+    }
+
+}
+
+@media (min-width: 511px) {
+    .login-box {
+        width: 450;
+        height: 400px;
+    }
+
+    #chartdiv {
+        width: 400;
+        height: 300px;
+    }
+}

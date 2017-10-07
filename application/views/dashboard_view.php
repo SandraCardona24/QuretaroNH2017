@@ -181,7 +181,6 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                 <p>
                   Admin
                 </p>
@@ -215,6 +214,7 @@
           </a>
         </li>
         <li class="treeview">
+<<<<<<< Updated upstream
           <a href="#">
             <i class="fa fa-check-square-o"></i>
             <span>Proyectos</span>
@@ -226,6 +226,19 @@
             <li><a href="<?=base_url()?>index.php/Proyecto"><i class="fa fa-plus"></i>Agregar</a></li>
             <li><a href="<?=base_url()?>index.php/Proyecto/Editar"><i class="fa fa-minus"></i>Editar</a></li>
           </ul>
+=======
+            <a href="#">
+              <i class="fa fa-users"></i>
+                <span>Proyectos</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="agregarCRUD.html"><i class="fa fa-plus"></i>Agregar</a></li>
+              <li><a href="editarCRUD.html"><i class="fa fa-minus"></i>Editar</a></li>
+            </ul>
+>>>>>>> Stashed changes
         </li>
         <li class="treeview">
           <a href="#">
@@ -253,6 +266,22 @@
             <li><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Editar</a></li>
           </ul>
         </li>
+<<<<<<< Updated upstream
+=======
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i>
+            <span>Orden de Trabajo</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="agregarOT"><i class="fa fa-plus"></i>Agregar</a></li>
+            <li><a href="editarOT"><i class="fa fa-minus"></i>Editar</a></li>
+          </ul>
+        </li>
+>>>>>>> Stashed changes
       </ul>
     </section>
     <!-- /.sidebar -->
