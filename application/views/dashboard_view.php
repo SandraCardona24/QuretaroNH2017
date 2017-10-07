@@ -51,83 +51,6 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <!--<li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">You have 4 messages</li>
-              <li>
-                <!-- inner menu: contains the actual data
-                <ul class="menu">
-                  <li><!-- start message
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <!-- end message
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        AdminLTE Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Sales Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
-                      </div>
-                      <h4>
-                        Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
-                      </h4>
-                      <p>Why not buy a new awesome theme?</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
-            </ul>
-          </li> -->
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -291,7 +214,7 @@
             <i class="fa fa-dashboard"></i><span>Dashboard</span>
           </a>
         </li>
-        <li><a href="#"><i class="fa fa-check-square-o"></i><span>Proyectos CRUD</span></a></li>
+        <li><a href="<?=base_url()?>index.php/Proyecto"><i class="fa fa-check-square-o"></i><span>Proyectos CRUD</span></a></li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-users"></i>
@@ -301,8 +224,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="agregar.html"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li><a href="eliminar.html"><i class="fa fa-minus"></i>Eliminar</a></li>
+            <li><a href="<?=base_url()?>index.php/Recursos"><i class="fa fa-plus"></i>Agregar</a></li>
+            <li><a href="<?=base_url()?>index.php/Recursos/Editar"><i class="fa fa-minus"></i>Editar</a></li>
           </ul>
         </li>
         <li><a href="#"><i class="fa fa-tasks"></i> <span>OS</span></a></li>
