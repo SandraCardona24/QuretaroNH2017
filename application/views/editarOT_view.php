@@ -1,7 +1,7 @@
 
 <div class="content-wrapper">
-
-    <section class="content-header">
+    <!-- Content Header (Page header) -->
+    <section id="sEditarOR" class="content-header">
       <h1>
         Ordenes de Trabajo
         <small>Editar</small>

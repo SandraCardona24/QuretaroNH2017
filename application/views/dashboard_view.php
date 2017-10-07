@@ -195,12 +195,12 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <!--<li class="header">MAIN NAVIGATION</li>-->
-        <li class="active">
+        <li id="menuActivoInicio">
           <a href="<?=base_url()?>index.php/Admin">
             <i class="fa fa-dashboard"></i><span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview">
+        <li class="menuActivoProyecto treeview">
           <a href="#">
             <i class="fa fa-check-square-o"></i>
             <span>Proyectos</span>
@@ -209,11 +209,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url()?>index.php/Proyecto"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li><a href="<?=base_url()?>index.php/Proyecto/Editar"><i class="fa fa-minus"></i>Editar</a></li>
+            <li id="menuActivoAgregarProyecto"><a href="<?=base_url()?>index.php/Proyecto"><i class="fa fa-plus"></i>Agregar</a></li>
+            <li id="menuActivoEditarProyecto"><a href="<?=base_url()?>index.php/Proyecto/Editar"><i class="fa fa-minus"></i>Editar</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="menuActivoRecurso treeview">
           <a href="#">
             <i class="fa fa-users"></i>
             <span>Recursos</span>
@@ -222,11 +222,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url()?>index.php/Recursos"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li><a href="<?=base_url()?>index.php/Recursos/EditarRecurso"><i class="fa fa-minus"></i>Editar</a></li>
+            <li id="menuActivoAgregarRecurso"><a href="<?=base_url()?>index.php/Recursos"><i class="fa fa-plus"></i>Agregar</a></li>
+            <li id="menuActivoEditarRecurso"><a href="<?=base_url()?>index.php/Recursos/EditarRecurso"><i class="fa fa-minus"></i>Editar</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="menuActivoOT treeview">
           <a href="#">
             <i class="fa fa-tasks"></i>
             <span>Orden de Trabajo</span>
@@ -235,21 +235,21 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url()?>index.php/OT"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Editar</a></li>
+            <li id="menuActivoAgregarOT"><a href="<?=base_url()?>index.php/OT"><i class="fa fa-plus"></i>Agregar</a></li>
+            <li id="menuActivoEditarOT"><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Editar</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class="menuActivoConfOT treeview">
           <a href="#">
-            <i class="fa fa-tasks"></i>
+            <i class="fa fa-cog"></i>
             <span>Configurar OT</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?=base_url()?>index.php/ConfiguracionOT"><i class="fa fa-plus"></i>Configurar</a></li>
-            <li><a href="<?=base_url()?>index.php/ConfiguracionOT/editarTO"><i class="fa fa-minus"></i>Editar COnfiguracion</a></li>
+            <li id="menuActivoAgregarConfOT"><a href="<?=base_url()?>index.php/ConfiguracionOT"><i class="fa fa-plus"></i>Configurar</a></li>
+            <li id="menuActivoEditarConfOT"><a href="<?=base_url()?>index.php/ConfiguracionOT/editarTO"><i class="fa fa-minus"></i>Editar COnfiguracion</a></li>
           </ul>
         </li>
       </ul>
@@ -547,7 +547,35 @@
     })
 
     $('document').ready(function(){
-        
+
+        if($('#sInicio').length == 1) $('#menuActivoInicio').addClass('active');
+        else if($('#sAgregarProyecto').length == 1) {
+          $('.menuActivoProyecto').addClass('active');
+          $('#menuActivoAgregarProyecto').addClass('active');
+        } else if($('#sEditarProyecto').length == 1) {
+          $('.menuActivoProyecto').addClass('active');
+          $('#menuActivoEditarProyecto').addClass('active');
+        } else if($('#sAgregarRecurso').length == 1) {
+          $('.menuActivoRecurso').addClass('active');
+          $('#menuActivoAgregarRecurso').addClass('active');
+        } else if($('#sEditarRecurso').length == 1) {
+          $('.menuActivoRecurso').addClass('active');
+          $('#menuActivoEditarRecurso').addClass('active');
+        } else if($('#sAgregarOT').length == 1) {
+          $('.menuActivoOT').addClass('active');
+          $('#menuActivoAgregarOT').addClass('active');
+        } else if($('#sEditarOT').length == 1) {
+          $('.menuActivoOT').addClass('active');
+          $('#menuActivoAgregarOT').addClass('active');
+        } else if($('#sAgregarConfOT').length == 1) {
+          $('.menuActivoConfOT').addClass('active');
+          $('#menuActivoAgregarConfOT').addClass('active');
+        } else if($('#sEditarConfOT').length == 1) {
+          $('.menuActivoConfOT').addClass('active');
+          $('#menuActivoEditarConfOT').addClass('active');
+        }
+
+
         var elemD = document.getElementById("progress-bar-danger");
         var elemS = document.getElementById("progress-bar-success");
         

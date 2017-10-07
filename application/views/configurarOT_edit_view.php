@@ -1,6 +1,6 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section id="sEditarConfOT" class="content-header">
       <h1>
         Editar Configurar orden de trabajo
         <small>Agregar</small>

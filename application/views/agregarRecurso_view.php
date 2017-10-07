@@ -1,6 +1,6 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section id="sAgregarRecurso" class="content-header">
       <h1>
         Recursos
         <small>Agregar</small>

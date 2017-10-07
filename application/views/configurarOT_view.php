@@ -1,7 +1,7 @@
 
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section id="sAgregarConfOT" class="content-header">
       <h1>
         Configurar orden de trabajo
         <small>Agregar</small>
