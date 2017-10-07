@@ -618,6 +618,7 @@
         elemD.innerHTML = widthDanger + '%';
 
         $('.alert-dismissible').click(function() {
+          
           var elemD = document.getElementById("progress-bar-danger");
           var elemS = document.getElementById("progress-bar-success");
           
