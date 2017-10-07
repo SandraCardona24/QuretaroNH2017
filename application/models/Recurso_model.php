@@ -20,7 +20,7 @@ class Recurso_model extends CI_Model{
 	public function getEstat(){
 		$this->db->select("ID_ESTATUS,DESC_ESTATUS");
 		$this->db->from("ESTATUS");
-		$this->db->where("TIPO_ESTATUS","R");
+		$this->db->where("TIPO_ESTATUS","r");
 		$query = $this->db->get();
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 
 	}

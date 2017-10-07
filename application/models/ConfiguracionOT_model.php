@@ -37,4 +37,12 @@ class ConfiguracionOT_model extends CI_Model{
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 	
 	}
 
+	public function getOrdenByProy($id){
+		$this->db->select("ID_OT,DESC_OT");
+		$this->db->from("ORDEN_TRABAJO");
+		$this->db->where("ORDEN_TRABAJO",$id);
+		$query = $this->db->get();
+		return ($query->num_rows() <= 0) ? NULL : $query->result(); 	
+	}
+
 }
