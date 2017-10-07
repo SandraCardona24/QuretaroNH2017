@@ -37,21 +37,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
             <!-- form start -->
             
               <div class="box-body">
-                <input id="identificador" name="identificador" type="hidden" class="form-control">
+                <input id="identi" name="identi" type="hidden" class="form-control">
 
                 <div class="form-group">
-                  <label for="nombre">Nombre</label>
-                  <input id="nombre" name="nombre" type="text" class="form-control">
+                  <label for="nom">Nombre</label>
+                  <input id="nom" name="nom" type="text" class="form-control">
                 </div>
 
                 <div class="form-group">
-                  <label for="apaterno">Apellido Paterno</label>
-                  <input id="paterno" name="paterno" type="text" class="form-control">
+                  <label for="pater">Apellido Paterno</label>
+                  <input id="pater" name="pater" type="text" class="form-control">
                 </div>
 
                 <div class="form-group">
-                  <label for="amaterno">Apellido Materno</label>
-                  <input id="materno" name="persona" type="text" class="form-control">
+                  <label for="mater">Apellido Materno</label>
+                  <input id="mater" name="mater" type="text" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -145,7 +145,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
       
             
               <div class="box-body">
-                  <table id="mytable" class="table">
+                  <table id="tabla_recurso" class="table">
                     <thead class="thead-inverse">
                       <tr>
                         <th>Nombre</th>

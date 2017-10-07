@@ -60,7 +60,7 @@ class Recursos extends CI_Controller {
 				$datos['ID_TEC_SEC'] = $tec_fin;
 				$datos['ID_PUESTO'] = $puesto;
 				//validamos si se hizo el insert
-				if($this->model->saveRec($datos)){
+				if($this->Recurso_model->saveRec($datos)){
 					$json['response_code'] = '200';
 				}else{
 					$json['response_code'] = '500';
@@ -81,7 +81,7 @@ class Recursos extends CI_Controller {
 			$datos['ID_PUESTO'] = $puesto;
 
 			//validamos si se hizo el insert
-			if($this->model->updateRec($datos,$identifcador)){
+			if($this->Recurso_model->updateRec($datos,$identifcador)){
 				$json['response_code'] = '200';
 			}else{
 				$json['response_code'] = '500';
@@ -89,6 +89,26 @@ class Recursos extends CI_Controller {
 
 		}//fin campos nulos
 
+		//respondemos el jason
+		echo json_encode($json);
+
 	}//fin recursDO
+
+	/**
+	*funcion para obtener un recurso
+	*/
+	public function getRecurso(){
+		
+		$idRecurso = $this->input->post("idRec");
+		$json = array();
+
+		if($idRecurso == NULL){
+			$json['response_code'] = 500;
+		}else{
+
+			
+		}
+
+	}//Fin de getRecurso
 
 }
