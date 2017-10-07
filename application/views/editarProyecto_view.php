@@ -29,20 +29,20 @@
                         <div class="form-group">
                             <label for="inputUser3" class="col-sm-2 control-label">Nombre del Proyecto</label>
                             <div class="col-sm-10">
-                                <input name="nom_proyect" type="text" class="form-control" id="nom_proyect" placeholder="Nombre del Proyecto">
+                                <input name="nom_proyect" type="text" class="form-control" id="nom_proyect" placeholder="Nombre del Proyecto" required="true">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Descripción del Proyecto</label>
                             <div class="col-sm-10">
-                                <input name="desc_proyect" type="text" class="form-control" id="desc_proyect" placeholder="Descripción del Proyecto">
+                                <input name="desc_proyect" type="text" class="form-control" id="desc_proyect" placeholder="Descripción del Proyecto" required="true">
                             </div>
                         </div>
                         <div class="box-body">                   
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Tecnología</label>
                                     <div class="col-sm-10">
-                                        <select id="id_tec" name="id_tec" class="form-control">
+                                        <select id="id_tec" name="id_tec" class="form-control" required="true">
                                             <option value="0">Seleccione</option>
                                             <?php foreach ($tecnologia as $est) {?>
                                             <option value="<?=$est->ID_TEC?>"><?=$est->NOMBRE_TEC;?></option>
@@ -57,7 +57,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input name="fecha_ini" type="text" class="form-control pull-right" id="fecha_ini">
+                                            <input name="fecha_ini" type="text" class="form-control pull-right" id="fecha_ini" required="true">
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input name="fecha_ter" type="text" class="form-control pull-right" id="fecha_ter">
+                                            <input name="fecha_ter" type="text" class="form-control pull-right" id="fecha_ter" required="true">
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Oficina</label>
                                     <div class="col-sm-10">
-                                        <select id="id_oficina" name="id_oficina" class="form-control">
+                                        <select id="id_oficina" name="id_oficina" class="form-control" required="true">
                                             <option value="0">Seleccione</option>
                                             <?php foreach ($oficina as $est) {?>
                                             <option value="<?=$est->ID_OFICINA?>"><?=$est->NOMBRE_OFI;?></option>

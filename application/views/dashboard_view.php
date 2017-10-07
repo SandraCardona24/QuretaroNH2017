@@ -4,31 +4,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminNeoris | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/dist/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="<?=base_url()?>rsc/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-  <!-- Google Font -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+   <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/morris.js/morris.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="<?=base_url()?>rsc/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -37,14 +24,14 @@
   <header class="main-header">
     <!-- Logo -->
     <a href="<?=base_url()?>index.php/Admin" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
+
       <span class="logo-mini"><b>N</b></span>
-      <!-- logo for regular state and mobile devices -->
+    
       <span class="logo-lg"><img src="<?=base_url()?>rsc/img/logo.png" alt="NeorisAdmin"></span>
     </a>
-    <!-- Header Navbar: style can be found in header.less -->
+  
     <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
+   
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>

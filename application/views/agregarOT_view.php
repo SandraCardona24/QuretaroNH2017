@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Horas Estimadas</label>
                             <div class="col-sm-10">
-                                <input name="horas" type="number" min="0" class="form-control" id="inputPassword3" placeholder="Horas Estimadas para el Proyecto ">
+                                <input name="horas" type="number" min="0" class="form-control" id="inputPassword3" placeholder="Horas Estimadas para el Proyecto " required="true">
                             </div>
                         </div>
                         <div class="form-group">
@@ -45,7 +45,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input name="fec_in" type="text" class="form-control pull-right" id="datepickerInicio" placeholder="Fecha de Inicio de la Orden">
+                                    <input name="fec_in" type="text" class="form-control pull-right" id="datepickerInicio" placeholder="Fecha de Inicio de la Orden" required="true">
                                 </div>
                             </div>
                         </div>
@@ -56,14 +56,14 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input name="fec_fin" type="text" class="form-control pull-right" id="datepickerFin" placeholder="Fecha Fin de la Orden">
+                                    <input name="fec_fin" type="text" class="form-control pull-right" id="datepickerFin" placeholder="Fecha Fin de la Orden" required="true">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Estatus</label>
                             <div class="col-sm-10">
-                                <select name="id_estatus" class="form-control">
+                                <select name="id_estatus" class="form-control" required="true">
                                     <option value="0">Seleccione</option>                 
                                     <?php foreach ($estatus['estatus'] as $e) { ?>
                                     <option value="<?=$e->ID_ESTATUS; ?>"><?=$e->DESC_ESTATUS; ?></option>
@@ -74,7 +74,7 @@
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Cliente del Proyecto</label>
                             <div class="col-sm-10">
-                                <input name="lider" type="text" class="form-control" id="inputPassword3" placeholder="Nombre del Cliente del Proyecto">
+                                <input name="lider" type="text" class="form-control" id="inputPassword3" placeholder="Nombre del Cliente del Proyecto" required="true">
                             </div>
                         </div>
 
@@ -83,7 +83,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Proyecto</label>
                                 <div class="col-sm-10">
-                                    <select name="id_proyecto" class="form-control">
+                                    <select name="id_proyecto" class="form-control" required="true">
                                       <option value="0">Seleccione</option>                 
                                       <?php foreach ($proyectos['proyecto'] as $p) { ?>
                                       <option value="<?=$p->ID_PROYECT; ?>"><?=$p->NOM_PROYECT; ?></option>

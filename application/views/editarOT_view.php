@@ -1,7 +1,6 @@
 
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+
     <section class="content-header">
       <h1>
         Ordenes de Trabajo
@@ -12,19 +11,15 @@
         <li class="active">Editar Orden de Trabajo</li>
     </ol>
 </section>
-
-<!-- Main content -->
 <section class="content">
 
     <div class="row">
         <div class="col-xs-12">
-            <!-- Horizontal Form -->
+        
             <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Editar Orden de Trabajo</h3>
-              </div>
-              <!-- /.box-header -->
-              <!-- form start -->
+              </div>           
               <form method="post" action="updateOrden" class="form-horizontal">
                 <div class="box-body">
                     <div class="form-group">
@@ -36,7 +31,7 @@
                     <div class="form-group">
                         <label for="horas" class="col-sm-2 control-label">Horas Estimadas</label>
                         <div class="col-sm-10">
-                            <input type="number" min="1" class="form-control" name="horas" id="horas" placeholder="Horas Estimadas para el Proyecto ">
+                            <input type="number" min="1" class="form-control" name="horas" id="horas" placeholder="Horas Estimadas para el Proyecto " required="true">
                         </div>
                     </div>
                     <div class="form-group">
@@ -46,7 +41,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control pull-right" name="fec_in" id="fec_in">
+                                <input type="text" class="form-control pull-right" name="fec_in" id="fec_in" required="true">
                             </div>
                         </div>
                     </div>
@@ -57,14 +52,14 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-calendar"></i>
                                 </div>
-                                <input type="text" class="form-control pull-right" name="fec_fin" id="fec_fin">
+                                <input type="text" class="form-control pull-right" name="fec_fin" id="fec_fin" required="true">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="id_estatus" class="col-sm-2 control-label">Estatus</label>
                         <div class="col-sm-10">
-                            <select id="id_estatus" name="id_estatus" class="form-control">
+                            <select id="id_estatus" name="id_estatus" class="form-control" required="true">
                                 <option value="0">Seleccione</option>                 
                                 <?php foreach ($estatus['estatus'] as $e) { ?>
                                 <option value="<?=$e->ID_ESTATUS; ?>"><?=$e->DESC_ESTATUS; ?></option>
@@ -75,7 +70,7 @@
                     <div class="form-group">
                         <label for="lider" class="col-sm-2 control-label">Cliente del Proyecto</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="lider" id="lider" placeholder="Nombre del Cliente del Proyecto">
+                            <input type="text" class="form-control" name="lider" id="lider" placeholder="Nombre del Cliente del Proyecto" required="true">
                         </div>
                     </div>
 
@@ -84,7 +79,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">Proyecto</label>
                             <div class="col-sm-10">
-                                <select name="id_proyecto" id="id_proyecto" class="form-control">
+                                <select name="id_proyecto" id="id_proyecto" class="form-control" required="true">
                                     <option value="0">Seleccione</option>                 
                                     <?php foreach ($proyectos['proyecto'] as $p) { ?>
                                     <option value="<?=$p->ID_PROYECT; ?>"><?=$p->NOM_PROYECT; ?></option>

@@ -29,19 +29,19 @@
                             <div class="form-group">
                                 <label for="nom" class="col-sm-2 control-label">Nombre(s)</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="nom" placeholder="Nombre(s)">
+                                    <input type="text" class="form-control" id="nom" placeholder="Nombre(s)" required="true">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="paterno" class="col-sm-2 control-label">Apellido Paterno</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="pater" placeholder="Apellido Paterno">
+                                    <input type="text" class="form-control" id="pater" placeholder="Apellido Paterno" required="true">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="materno" class="col-sm-2 control-label">Apellido Materno</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="mater" placeholder="Apellido Materno">
+                                    <input type="text" class="form-control" id="mater" placeholder="Apellido Materno" required="true">
                                 </div>
                             </div>
                             <div class="box-body">
@@ -49,7 +49,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Status</label>
                                         <div class="col-sm-10">
-                                            <select id="estatus" class="form-control">
+                                            <select id="estatus" class="form-control" required="true">
                                                 <option value="0">-Estatus-</option>
                                                 <?php
                                                     if(!is_null($estatus)) :
@@ -65,7 +65,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Tecnología Primaria</label>
                                         <div class="col-sm-10">
-                                            <select id="tp" class="form-control">
+                                            <select id="tp" class="form-control" required="true">
                                                 <option value="0">-Tecnología-</option>
                                                 <?php
                                                     if(!is_null($tecnologias)) :
@@ -81,7 +81,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Tecnología Secundaria</label>
                                         <div class="col-sm-10">
-                                            <select id="ts" class="form-control">
+                                            <select id="ts" class="form-control" required="true">
                                             <option value="0">-Tecnología-</option>
                                                 <?php
                                                     if(!is_null($tecnologias)) :
@@ -98,7 +98,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Puesto Recurso</label>
                                         <div class="col-sm-10">
-                                            <select id="ps" class="form-control">
+                                            <select id="ps" class="form-control" required="true">
                                             <option value="0">-Puestos-</option>
                                                 <?php
                                                     if(!is_null($puestos)) :
