@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="estatus">Estatus recurso</label>
                   <select id="estatus" name="estatus" class="form-control">
-                  	<option>-Estatus-</option>
+                  	<option value="0">-Estatus-</option>
                   	    <?php
                          if(!is_null($estatus)) :
                             foreach ($estatus as $est) { ?>
@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="tp">Tecnologia Principal</label>
                   <select id="tp" name="tp" class="form-control">
-                  	<option>-Tecnologia-</option>
+                  	<option value="0">-Tecnologia-</option>
                         <?php
                          if(!is_null($tecnologias)) :
                             foreach ($tecnologias as $tec1) { ?>
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="ts">Tecnologia Secundaria</label>
                   <select id="ts" name="ts" class="form-control">
-                  	<option>-Tecnologia-</option>
+                  	<option value="0">-Tecnologia-</option>
                   	    <?php
                          if(!is_null($tecnologias)) :
                             foreach ($tecnologias as $tec2) { ?>
@@ -103,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="ps">Puesto Recurso</label>
                   <select id="ps" name="ps" class="form-control">
-                  	<option>-Puesto-</option>
+                  	<option value="0">-Puesto-</option>
                   	<?php
                          if(!is_null($puestos)) :
                             foreach ($puestos as $ps) { ?>

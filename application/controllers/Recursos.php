@@ -23,24 +23,27 @@ class Recursos extends CI_Controller {
 		$datos['estatus'] = $this->Recurso_model->getEstat();
 		$datos['tecnologias'] = $this->Recurso_model->getTec();
 		$datos['puestos'] = $this->Recurso_model->getPuesto();
-		$datos['recursos'] = $this->Recurso_model->getRecursos();
-		$datos['vista'] = $this->load->view("agregarRecurso_view", '', TRUE);
 
-		$this->load->view("dashboard_view", $datos);
+		$fragment1 = array();
+		$fragment1['vista'] = $this->load->view("agregarRecurso_view", $datos, TRUE);
+
+		$this->load->view("dashboard_view", $fragment1);
 	}
 
 	/**
 	*funcion para madar llamar la vista de edicion de recursos
 	*/
-	public function EditarRecurso(){
+	public function editarRecurso(){
 		$datos = array();
+		$fragment2 = array();
 		$datos['estatus'] = $this->Recurso_model->getEstat();
 		$datos['tecnologias'] = $this->Recurso_model->getTec();
 		$datos['puestos'] = $this->Recurso_model->getPuesto();
 		$datos['recursos'] = $this->Recurso_model->getRecursos();
-		$datos['vista'] = $this->load->view("editarRecurso_view", '', TRUE);
 
-		$this->load->view("dashboard_view",$datos);
+		$fragment2['vista'] = $this->load->view("editarRecurso_view", $datos, TRUE);
+
+		$this->load->view("dashboard_view",$fragment2);
 	}
 
 	/**
@@ -49,7 +52,7 @@ class Recursos extends CI_Controller {
 	public function recursoDo(){
 
 		$json = array();
-		$identifcador = $this->input->post("ident");
+		$identificador = $this->input->post("identificador");
 		$nombre = $this->input->post("nombre");
 		$paterno = $this->input->post("paterno");
 		$materno = $this->input->post("materno");
@@ -59,7 +62,7 @@ class Recursos extends CI_Controller {
 		$puesto = $this->input->post("id_puesto");
 
 		//Es un insert
-		if($identifcador == NULL || $identifcador == "" || $identifcador == '0'){
+		if($identificador == NULL || $identificador == "" || $identificador == '0'){
 			$datos = array();
 
 			if($nombre == "" && $nombre == NULL || $paterno == "" && $paterno == NULL || $materno == "" && $materno == NULL|| $estatus == '0' || $tec_ini == '0' || $tec_fin == '0'){
@@ -96,7 +99,7 @@ class Recursos extends CI_Controller {
 			$datos['ID_PUESTO'] = $puesto;
 
 			//validamos si se hizo el insert
-			if($this->Recurso_model->updateRec($datos,$identifcador)){
+			if($this->Recurso_model->updateRec($datos,$identificador)){
 				$json['response_code'] = '200';
 			}else{
 				$json['response_code'] = '500';

@@ -25,23 +25,24 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form class="form-horizontal">
+                        <input type="hidden" id="identi">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="inputUser3" class="col-sm-2 control-label">Nombre(s)</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Nombre(s)">
+                                    <input type="text" class="form-control" id="nom" placeholder="Nombre(s)">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputLastName3" class="col-sm-2 control-label">Apellido Paterno</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Apellido Paterno">
+                                    <input type="text" class="form-control" id="pater" placeholder="Apellido Paterno">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputLastName3" class="col-sm-2 control-label">Apellido Materno</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Apellido Materno">
+                                    <input type="text" class="form-control" id="mater" placeholder="Apellido Materno">
                                 </div>
                             </div>
                             <div class="box-body">
@@ -49,46 +50,77 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Status</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control">
-                                              <option>option 1</option>
-                                              <option>option 2</option>
-                                              <option>option 3</option>
-                                              <option>option 4</option>
-                                              <option>option 5</option>
+                                            <select id="estatus" class="form-control">
+                                                <option value="0">-Estatus-</option>
+                                                <?php
+                                                    if(!is_null($estatus)) :
+                                                        foreach ($estatus as $est) { ?>
+                                                            <option value="<?php echo $est->ID_ESTATUS?>"><?php echo $est->DESC_ESTATUS?></option>                            
+                                                        <?php
+                                                        }
+                                                    endif;
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Tecnología Primaria</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control">
-                                                    <option>option 1</option>
-                                                    <option>option 2</option>
-                                                    <option>option 3</option>
-                                                    <option>option 4</option>
-                                                    <option>option 5</option>
+                                            <select id="tp" class="form-control">
+                                                <option value="0">-Tecnología-</option>
+                                                <?php
+                                                    if(!is_null($tecnologias)) :
+                                                        foreach ($tecnologias as $tec1) { ?>
+                                                            <option value="<?php echo $tec1->ID_TEC?>"><?php echo $tec1->NOMBRE_TEC?></option>                            
+                                                        <?php
+                                                        }
+                                                    endif;
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Tecnología Secundaria</label>
                                         <div class="col-sm-10">
-                                            <select class="form-control">
-                                              <option>option 1</option>
-                                              <option>option 2</option>
-                                              <option>option 3</option>
-                                              <option>option 4</option>
-                                              <option>option 5</option>
+                                            <select id="ts" class="form-control">
+                                            <option value="0">-Tecnología-</option>
+                                                <?php
+                                                    if(!is_null($tecnologias)) :
+                                                        foreach ($tecnologias as $tec1) { ?>
+                                                            <option value="<?php echo $tec1->ID_TEC?>"><?php echo $tec1->NOMBRE_TEC?></option>                            
+                                                        <?php
+                                                        }
+                                                    endif;
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Puesto Recurso</label>
+                                        <div class="col-sm-10">
+                                            <select id="ps" class="form-control">
+                                            <option value="0">-Puestos-</option>
+                                                <?php
+                                                    if(!is_null($puestos)) :
+                                                        foreach ($puestos as $pst) { ?>
+                                                            <option value="<?php echo $pst->ID_PUESTO?>"><?php echo $pst->DESC_PUESTO?></option>                            
+                                                        <?php
+                                                        }
+                                                    endif;
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-default">Cancelar</button>
-                            <button type="submit" class="btn btn-danger pull-right">Editar</button>
+                            <button id="saveRecurso" type="submit" class="btn btn-success pull-right">Guardar</button>
+                            <button type="submit" class="btn btn-danger pull-right">Cancelar</button>
                         </div>
                     <!-- /.box-footer -->
                     </form>
@@ -102,26 +134,31 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                      <table id="example1" class="table table-bordered table-striped">
+                      <table id="tabla_recurso" class="table table-bordered table-striped">
                         <thead>
                           <tr>
                             <th>Nombre(s)</th>
                             <th>Apellido Paterno</th>
                             <th>Apellido Materno</th>
                             <th>Status</th>
-                            <th>Tecnología Primaria</th>
-                            <th>Tecnología Secundaria</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>Doe</td>
-                            <td>1</td>
-                            <td>Python</td>
-                            <td>Java</td>
-                          </tr>
+                        <?php
+                            if(!is_null($recursos)) :
+                                foreach ($recursos as $rec) {?>
+                                    <tr id="tr-<?php echo $rec->ID_RECURSO;?>">
+                                        <td><?php echo $rec->NOMBRE_REC;?></td>
+                                        <td><?php echo $rec->APATERNO_REC;?></td>
+                                        <td><?php echo $rec->AMATERNO_REC;?></td>
+                                        <td><?php echo $rec->DESC_ESTATUS;?></td>
+                                        <td><button class="editar-rec btn btn-warning btn-block" data-id="<?php echo $rec->ID_RECURSO;?>">Editar</button></td>
+                                        <td><button class="eliminar-rec btn btn-danger btn-block" data-id="<?php echo $rec->ID_RECURSO;?>">Eliminar</button></td>
+                                    </tr>
+                                <?php
+                                }
+                            endif;
+                        ?>
                         </tbody>
                         <tfoot>
                           <tr>
@@ -129,8 +166,6 @@
                             <th>Apellido Paterno</th>
                             <th>Apellido Materno</th>
                             <th>Status</th>
-                            <th>Tecnología Primaria</th>
-                            <th>Tecnología Secundaria</th>
                           </tr>
                         </tfoot>
                       </table>

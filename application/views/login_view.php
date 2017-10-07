@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
           <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
       
-            <form action="index.php/Login/userdo" method="post">
+            <form action="<?=base_url()?>index.php/Login/userdo" method="post">
               <div class="form-group has-feedback">
                 <input name="username" id="email" type="email" class="form-control" placeholder="Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

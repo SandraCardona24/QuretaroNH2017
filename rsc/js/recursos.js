@@ -41,7 +41,7 @@ $(function(){
 		am = $("#mater").val();
 	
 		$.ajax({
-			url : "recursoDo",
+			url :  "Recursos/recursoDo",
 			type : "POST",
 			dataType : "json",
 			data:{identificador:ident, nombre:name, paterno:ap, materno:am, id_estatus:status, tec_ini:tecPrincipal, tec_sec:tecSecundaria, id_puesto:puesto},
@@ -49,6 +49,8 @@ $(function(){
 				if(json.response_code == '200'){
 					alert("Registro correcto");
 					limpiaCampos();
+				}else if(json.response_code == '204'){
+					alert("Campos Nulos");
 				}
 			},
 			error : function(xhr){
@@ -58,76 +60,13 @@ $(function(){
 
 	});
 
-	/**
-	*funcion para traer la informacion de un recurso por id
-	*/
-	$("#tabla_recurso").on("click",".editar-rec",function(){
-
-		var idRecurso = $(this).attr('data-id');
-
-		$.ajax({
-			url : "getRecurso",
-			type : "POST",
-			dataType : "json",
-			data:{idRec : idRecurso},
-			success : function(json){
-				if(json.response_code == '200'){
-
-					$(json.recurso).each(function(i,r){
-						$("#identi").val(r.ID_RECURSO);
-						$("#nom").val(r.NOMBRE_REC);
-						$("#pater").val(r.APATERNO_REC);
-						$("#mater").val(r.AMATERNO_REC);
-						$('#estatus').val(r.ID_ESTATUS);
-						$('#tp').val(r.ID_TEC_PRI);	
-						$('#ts').val(r.ID_TEC_SEC);
-						$('#ps').val(r.ID_PUESTO);
-					});
-					
-				}
-			},
-			error : function(xhr){
-				alert("Algo salio Mal");
-			}
-		});
-	});
-
-	/**
-	*funcion para elimiar a un recurso
-	*/
-	$("#tabla_recurso").on("click",".eliminar-rec",function(){
-
-		var idRecurso = $(this).attr('data-id');
-
-		$.ajax({
-			url : "eliminarRecurso",
-			type : "POST",
-			dataType : "json",
-			data:{idRecE : idRecurso},
-			success : function(json){
-				if(json.response_code == '200'){
-					
-				}
-			},
-			error : function(xhr){
-				alert("Algo salio Mal");
-			}
-		});
-	});
-
-
-
-	
-
-
-	function limpiaCampos(){
-		$("#identi").val("");
-		$("#nom").val("");
-		$("#pater").val("");
-		$("#mater").val("");
-		$('#estatus').val('0');
-		$('#tp').val('0');
-		$('#ts').val('0');
-		$('#ps').val('0');
-	}
-});
+function limpiaCampos(){
+	$("#identi").val("");
+	$("#nom").val("");
+	$("#pater").val("");
+	$("#mater").val("");
+	$('#estatus').val('0');
+	$('#tp').val('0');
+	$('#ts').val('0');
+	$('#ps').val('0');
+}

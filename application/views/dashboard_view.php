@@ -509,6 +509,9 @@
 <script src="<?=base_url()?>rsc/plugins/input-mask/jquery.inputmask.extensions.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url()?>rsc/dist/js/demo.js"></script>
+<!-- Script para recursos -->
+<script src="<?=base_url()?>rsc/js/recursos.js"></script>
+<script src="<?=base_url()?>rsc/js/recursos_edit.js"></script>
 <script>
     $(function () {
         //Initialize Select2 Elements

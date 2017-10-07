@@ -44,8 +44,9 @@ class Recurso_model extends CI_Model{
 	}
 
 	public function getRecursos(){
-		$this->db->select("ID_RECURSO,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO");
+		$this->db->select("ID_RECURSO,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,DESC_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO");
 		$this->db->from("RECURSO");
+		$this->db->join("ESTATUS","ESTATUS.ID_ESTATUS = RECURSO.ID_RECURSO");
 		$query = $this->db->get();
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 	
 	}
