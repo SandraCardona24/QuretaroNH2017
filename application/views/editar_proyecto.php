@@ -8,7 +8,7 @@
 		<div class="col-sm-12">
 			<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2>Nuevo proyecto</h2>
+				<h2>Modificar proyecto</h2>
 			</div>
 			<!-- /.panel-heading -->
 
@@ -23,7 +23,8 @@
 							type="text" 
 							name="nom_proyect" 
 							id="nom_proyect" 
-							class="form-control" required="required">	
+							class="form-control" required="required" 
+							value="<?php echo $edicion->NOM_PROYECT; ?>" >	
 					</div>
 					<!-- /.form-group -->
 				</div>
@@ -39,7 +40,8 @@
 							type="date" 
 							name="fecha_ini" 
 							id="fecha_ini" 
-							class="form-control" required="required">	
+							class="form-control" required="required"
+							value="<?php echo $edicion->FECHA_INI; ?>" >	
 						
 					</div>
 					<!-- /.form-group -->
@@ -56,7 +58,8 @@
 							type="date" 
 							name="fecha_ter" 
 							id="fecha_ter" 
-							class="form-control" required="required">	
+							class="form-control" required="required"
+							value="<?php echo $edicion->FECHA_TER; ?>" >		
 						
 					</div>
 					<!-- /.form-group -->
@@ -73,7 +76,8 @@
 							name="desc_proyect" 
 							id="desc_proyect" 
 							rows="5" 
-							class="form-control" required="required"></textarea>
+							class="form-control" required="required"
+							><?php echo $edicion->DESC_PROYECT; ?></textarea>
 						
 					</div>
 					<!-- /.form-group -->
@@ -87,7 +91,10 @@
 									<?php 
 										if(!is_null($tecnologia)) :
 											foreach ($tecnologia as $tec) {?>
-                            	<option value="<?php echo $tec->ID_TEC?>">
+                            	<option value="<?php echo $tec->ID_TEC?>" 
+                            		<?php if ($tec->ID_TEC == $edicion->ID_TEC) { ?>
+                            		selected
+                            	<?php } ?>>
                             		<?php echo $tec->NOMBRE_TEC;?>
                             	</option>
                             		<?php
@@ -105,7 +112,11 @@
 							<?php 
 							if (!is_null($oficina)): 
 								foreach ($oficina as $ofi) {?>
-								<option value="<?php echo $ofi->ID_OFICINA?>">
+								<option value="<?php echo $ofi->ID_OFICINA?>"  
+									<?php if ($ofi->ID_OFICINA == $edicion->ID_OFICINA) {?>
+									selected
+								<?php } ?>
+								>
 									<?php echo $ofi->NOMBRE_OFI;?>
 								</option>
 								<?php
@@ -114,6 +125,29 @@
 
 							?>
 						</select>
+					</div>
+				</div>
+
+				<div class="col-sm-2">
+					<div class="form-group">
+						<label class="control-label">
+							Estatus
+				 	    </label>
+				 	    <select name="estatus" id="estatus" class="form-control">
+				 	    	<option>--------</option>
+				 	    	<?php if (!is_null($estatus)): 
+				 	    				foreach ($estatus as $est) {?>
+				 	    		<option value="<?php echo $est->ID_ESTATUS?>" 
+				 	    			<?php if ($est->ID_ESTATUS == $edicion->ID_ESTATUS) { ?>
+				 	    			selected
+				 	    		<?php }  ?>>
+				 	    			<?php echo $est->DESC_ESTATUS;?>
+				 	    		</option>
+				 	    		<?php  
+				 	    	}
+				 	    endif;
+				 	    ?>
+				 	    </select>
 					</div>
 				</div>
 
@@ -143,57 +177,3 @@
 	<!-- /.row -->
 </div>
 <!-- /.container -->
-<div class="box-body">
-  <table id="mytable" class="table">
-    <thead class="thead-inverse">
-      <tr>
-      	<th>Identificador</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Tecnologia</th>
-        <th>Fecha de inicio</th>
-        <th>Fecha de termino</th>
-        <th>Estatus</th>
-        <th>Oficina</th>
-         
-        <th>Editar</th>
-        <th>Cancelar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-        if(!is_null($proyectos)) :
-            foreach ($proyectos as $rec) {?>
-            <tr id="tr-<?php echo $rec->ID_PROYECT;?>">
-            	<td><?php echo $rec->ID_PROYECT; ?></td>
-              	<td><?php echo $rec->NOM_PROYECT;?></td>
-             	<td><?php echo $rec->DESC_PROYECT;?></td>
-              	<td><?php echo $rec->NOM_PROYECT;?></td>
-              	<td><?php echo $rec->FECHA_INI;?></td>
-              	<td><?php echo $rec->FECHA_TER; ?></td>
-              	<td><?php echo $rec->DESC_ESTATUS; ?></td>
-              	<td><?php echo $rec->NOMBRE_OFI; ?></td>
-
-               
-              <td> <?php if ($rec->ID_ESTATUS != "3") {   ?> 
-              	<button class="editar-pro btn btn-warning btn-block"  data-id="<?php echo $rec->ID_PROYECT;?>">Editar</button>
-              	<?php } ?>
-              </td>
-              <td>
-              	<?php if ($rec->ID_ESTATUS != "3") {   ?> 
-              	<button class="eliminar-pro btn btn-danger btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Cancelar</button>
-              	<?php } ?>
-              </td>
-            </tr>
-          <?php
-              
-            }
-          endif;
-        ?>
-    </tbody>
-  </table>
-</div>
-<form id="edit_proy" method="post" action="<?=base_url()?>index.php/Proyecto/editar">
-	<input type="hidden" name="id_proy" id="id_proy">
-</form>
-<!-- /.box-body -->

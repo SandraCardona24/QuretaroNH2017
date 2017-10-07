@@ -7,8 +7,22 @@ $(function () {
 		});
 	});
 
+	$(".editar-pro").each(function(){
+		var idEdit = $(this).attr('data-id');
+		$(this).click(function(){
+			editar(idEdit);
+
+		});
+	});
+
 });
 
+function editar(idEdit){
+
+	document.getElementById("id_proy").value = idEdit;
+	document.getElementById("edit_proy").submit();
+
+}
 
 
 

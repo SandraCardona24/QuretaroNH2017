@@ -15,7 +15,9 @@ class Proyecto extends CI_Controller {
 		$data['proyectos'] = $this->Proyecto_model->consulta_proyectos();
 		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
 		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
-		$data['vista'] = $this->load->view('agregarProyecto_view', '', TRUE);
+		
+ 
+		$this->load->view('alta_proyecto_view', $data);
  
 		$this->load->view('dashboard_view', $data, FALSE);		
 		
@@ -66,4 +68,20 @@ class Proyecto extends CI_Controller {
 		}
 		echo json_encode($json);
 	}
+
+	public function editar(){
+
+		$id_proyect = $this->input->post("id_proy");
+
+		$data = array();
+		$data['proyectos'] = $this->Proyecto_model->consulta_proyectos();
+		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
+		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
+		$data['estatus'] = $this->Proyecto_model->combo_estatus();
+		$data['edicion'] = $this->Proyecto_model->editar_proyecto($id_proyect);
+		$this->load->view("editar_proyecto", $data);
+
+
+	}
+
 }
