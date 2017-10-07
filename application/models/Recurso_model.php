@@ -65,5 +65,14 @@ class Recurso_model extends CI_Model{
 		$this->db->update('RECURSO',$datos);
 		return true;
 	}
+	/**
+	*funcion para obtener e¿un recurso por id
+	*/
+	public function getRecursoById($id){
+		$this->db->select("ID_RECURSO,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO");
+		$this->db->from("RECURSO");
+		$query = $this->db->get();
+		return ($query->num_rows() <= 0) ? NULL : $query->result();
+	}
 
 }

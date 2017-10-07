@@ -103,11 +103,20 @@ class Recursos extends CI_Controller {
 		$json = array();
 
 		if($idRecurso == NULL){
-			$json['response_code'] = 500;
+
+			$json['response_code'] = '500';
+
 		}else{
 
-			
+			if($this->Recurso_model->getRecursoById($idRecurso)){
+				$json['response_code'] = '200';	
+			}else{
+				$json['response_code'] = '500';	
+			}
+
 		}
+		//respondemos el jason
+		echo json_encode($json);
 
 	}//Fin de getRecurso
 

@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 					);
 					
 					$this->session->set_userdata($datos_usuario);
-					redirect("Admin");
+					redirect("Mapa");
 
 				}else{
 
