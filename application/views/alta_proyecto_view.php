@@ -170,7 +170,7 @@
               <td><?php echo $rec->FECHA_INI;?></td>
               <td><?php echo $rec->FECHA_TER; ?></td>
               <td><?php echo $rec->DESC_ESTATUS; ?></td>
-              <td><?php echo $rec->ID_ESTATUS; ?></td>
+              <td><?php echo $rec->NOMBRE_OFI; ?></td>
 
                
               <td> <?php if ($rec->ID_ESTATUS != "3") {   ?> 
