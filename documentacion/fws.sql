@@ -36,11 +36,11 @@ DELETE FROM `det_rec_proy`;
 
 -- Volcando estructura para tabla fsw.estatus
 CREATE TABLE IF NOT EXISTS `estatus` (
-  `ID_ESTATUS` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_ESTATUS` int(11) NOT NULL ,
   `DESC_ESTATUS` char(45) NOT NULL,
   `TIPO_ESTATUS` char(45) NOT NULL,
   PRIMARY KEY (`ID_ESTATUS`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- Volcando datos para la tabla fsw.estatus: ~0 rows (aproximadamente)
 DELETE FROM `estatus`;
