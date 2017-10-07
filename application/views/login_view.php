@@ -33,6 +33,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
           <div class="login-logo">
             <a href="./index.html"><img src="<?=base_url()?>rsc/img/logo.png" alt="Neoris"><!--<b>Admin</b>Neoris--></a>
           </div>
+<?php
+    if($this->session->flashdata('error')){
+?>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong><?php echo $this->session->flashdata('error');?></strong>
+    </div>
+<?php
+  }
+?>
           <!-- /.login-logo -->
           <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>

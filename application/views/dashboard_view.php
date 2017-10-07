@@ -250,6 +250,7 @@
           <ul class="treeview-menu">
             <li><a href="<?=base_url()?>index.php/OT"><i class="fa fa-plus"></i>Agregar</a></li>
             <li><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Editar</a></li>
+            <li><a href="<?=base_url()?>index.php/ConfiguracionOT"><i class="fa fa-plus"></i>Configurar OT</a></li>
           </ul>
         </li>
       </ul>

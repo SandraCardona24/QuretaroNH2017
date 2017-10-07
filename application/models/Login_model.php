@@ -22,7 +22,7 @@ class Login_model extends CI_Model{
 		$this->db->select("ID_USUARIO,NOMBRE_USR,PASSWORD_USR,ID_RECURSO,ID_ESTAT");
 		$this->db->from("USUARIO");
 		$this->db->where("NOMBRE_USR = BINARY",$name);
-		$this->db->where("ID_ESTAT",20);
+		$this->db->where("ID_ESTAT",21);
 		$query = $this->db->get();
 		return ($query->num_rows() <= 0) ? NULL : $query->row(); 
 	}
