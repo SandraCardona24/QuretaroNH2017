@@ -44,10 +44,7 @@ class Recurso_model extends CI_Model{
 	}
 
 	public function getRecursos(){
-		$this->db->select("ID_RECURSO,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,DESC_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO");
-		$this->db->from("RECURSO");
-		$this->db->join("ESTATUS","ESTATUS.ID_ESTATUS = RECURSO.ID_RECURSO");
-		$query = $this->db->get();
+		$query = $this->db->query('SELECT ID_RECURSO,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,DESC_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO FROM RECURSO INNER JOIN ESTATUS ON(ESTATUS.ID_ESTATUS = RECURSO.ID_RECURSO) WHERE RECURSO.ID_ESTATUS != 21');
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 	
 	}
 	/**
@@ -64,7 +61,7 @@ class Recurso_model extends CI_Model{
 	public function updateRec($datos,$id){
 		$this->db->where('ID_RECURSO',$id);
 		$this->db->update('RECURSO',$datos);
-		return true;
+		return TRUE;
 	}
 	/**
 	*funcion para obtener e¿un recurso por id
@@ -81,6 +78,6 @@ class Recurso_model extends CI_Model{
 		$this->db->set('ID_ESTATUS',21);
 		$this->db->where('ID_RECURSO',$id);
 		$this->db->update('RECURSO');
-		return true;	
+		return TRUE;	
 	}
 }

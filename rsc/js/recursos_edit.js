@@ -33,12 +33,17 @@ $(function(){
 	/**
 	*funcion para guardar la informacion de un recurso
 	*/
-	$("#saveRecurso").click(function(){
+	$("#editRecurso").click(function(){
 
 		ident = $("#identi").val();
 		name = $("#nom").val();
 		ap = $("#pater").val();
 		am = $("#mater").val();
+		status = $('#estatus').val();
+		tecPrincipal = $('#tp').val();
+		tecSecundaria = $('#ts').val();
+		puesto = $('#ps').val();
+	
 	
 		$.ajax({
 			url :  "recursoDo",
@@ -76,6 +81,7 @@ $(function(){
 				if(json.response_code == '200'){
 
 					$(json.recurso).each(function(i,r){
+
 						$("#identi").val(r.ID_RECURSO);
 						$("#nom").val(r.NOMBRE_REC);
 						$("#pater").val(r.APATERNO_REC);
@@ -84,6 +90,7 @@ $(function(){
 						$('#tp').val(r.ID_TEC_PRI);	
 						$('#ts').val(r.ID_TEC_SEC);
 						$('#ps').val(r.ID_PUESTO);
+
 					});
 					
 				}
@@ -108,7 +115,7 @@ $(function(){
 			data:{idRecE : idRecurso},
 			success : function(json){
 				if(json.response_code == '200'){
-					
+					alert("Se elimino al usuario")
 				}
 			},
 			error : function(xhr){

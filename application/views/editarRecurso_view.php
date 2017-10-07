@@ -119,7 +119,7 @@
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
-                            <button id="saveRecurso" type="submit" class="btn btn-success pull-right">Guardar</button>
+                            <button id="editRecurso" type="submit" class="btn btn-success pull-right">Guardar</button>
                             <button type="submit" class="btn btn-danger pull-right">Cancelar</button>
                         </div>
                     <!-- /.box-footer -->
