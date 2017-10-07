@@ -29,6 +29,19 @@ class Recursos extends CI_Controller {
 	}
 
 	/**
+	*funcion para madar llamar la vista de edicion de recursos
+	*/
+	public function EditarRecurso(){
+		$datos = array();
+		$datos['estatus'] = $this->Recurso_model->getEstat();
+		$datos['tecnologias'] = $this->Recurso_model->getTec();
+		$datos['puestos'] = $this->Recurso_model->getPuesto();
+		$datos['recursos'] = $this->Recurso_model->getRecursos();
+
+		$this->load->view("recurso_edit_view",$datos);
+	}
+
+	/**
 	*funcion para guardar un recurso
 	*/
 	public function recursoDo(){

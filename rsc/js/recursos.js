@@ -1,5 +1,10 @@
 $(function(){
-	
+/**
+ * @author Noé Ramos
+ * @version 0.1
+ * @copyright NEORIS, Todos los derechos reservados 2017
+*/
+	//Variables
 	var ident = "";
 	var name = "";
 	var ap = "";
@@ -25,7 +30,9 @@ $(function(){
 		puesto = $('#ps').val();
 	});
 
-
+	/**
+	*funcion para guardar la informacion de un recurso
+	*/
 	$("#saveRecurso").click(function(){
 
 		ident = $("#identi").val();
@@ -34,7 +41,7 @@ $(function(){
 		am = $("#mater").val();
 	
 		$.ajax({
-			url : "Recursos/recursoDo",
+			url : "recursoDo",
 			type : "POST",
 			dataType : "json",
 			data:{identificador:ident, nombre:name, paterno:ap, materno:am, id_estatus:status, tec_ini:tecPrincipal, tec_sec:tecSecundaria, id_puesto:puesto},
@@ -51,12 +58,15 @@ $(function(){
 
 	});
 
+	/**
+	*funcion para traer la informacion de un recurso por id
+	*/
 	$("#tabla_recurso").on("click",".editar-rec",function(){
 
 		var idRecurso = $(this).attr('data-id');
 
 		$.ajax({
-			url : "Recursos/getRecurso",
+			url : "getRecurso",
 			type : "POST",
 			dataType : "json",
 			data:{idRec : idRecurso},
@@ -82,13 +92,15 @@ $(function(){
 		});
 	});
 
-
+	/**
+	*funcion para elimiar a un recurso
+	*/
 	$("#tabla_recurso").on("click",".eliminar-rec",function(){
 
 		var idRecurso = $(this).attr('data-id');
 
 		$.ajax({
-			url : "Recursos/eliminarRecurso",
+			url : "eliminarRecurso",
 			type : "POST",
 			dataType : "json",
 			data:{idRecE : idRecurso},

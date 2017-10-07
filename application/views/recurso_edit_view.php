@@ -57,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="estatus">Estatus recurso</label>
                   <select id="estatus" name="estatus" class="form-control">
-                  	<option>-Estatus-</option>
+                  	<option values="0">-Estatus-</option>
                   	    <?php
                          if(!is_null($estatus)) :
                             foreach ($estatus as $est) { ?>
@@ -72,7 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="tp">Tecnologia Principal</label>
                   <select id="tp" name="tp" class="form-control">
-                  	<option>-Tecnologia-</option>
+                  	<option values="0">-Tecnologia-</option>
                         <?php
                          if(!is_null($tecnologias)) :
                             foreach ($tecnologias as $tec1) { ?>
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="ts">Tecnologia Secundaria</label>
                   <select id="ts" name="ts" class="form-control">
-                  	<option>-Tecnologia-</option>
+                  	<option values="0">-Tecnologia-</option>
                   	    <?php
                          if(!is_null($tecnologias)) :
                             foreach ($tecnologias as $tec2) { ?>
@@ -103,7 +103,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="form-group">
                   <label for="ps">Puesto Recurso</label>
                   <select id="ps" name="ps" class="form-control">
-                  	<option>-Puesto-</option>
+                  	<option values="0">-Puesto-</option>
                   	<?php
                          if(!is_null($puestos)) :
                             foreach ($puestos as $ps) { ?>
@@ -130,6 +130,65 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
         <!--/.col (right) -->
       </div>
       <!-- /.row -->
+
+<!--   tabla de recurso-->
+
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Recursos</h3>
+            </div>
+            <!-- /.box-header -->
+      
+            
+              <div class="box-body">
+                  <table id="tabla_recurso" class="table">
+                    <thead class="thead-inverse">
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                        if(!is_null($recursos)) :
+                            foreach ($recursos as $rec) {?>
+                            <tr id="tr-<?php echo $rec->ID_RECURSO;?>">
+                              <td><?php echo $rec->NOMBRE_REC;?></td>
+                              <td><?php echo $rec->APATERNO_REC;?></td>
+                              <td><?php echo $rec->AMATERNO_REC;?></td>
+                              <td><button class="editar-rec btn btn-warning btn-block" data-id="<?php echo $rec->ID_RECURSO;?>">Editar</button></td>
+                              <td><button class="eliminar-rec btn btn-danger btn-block" data-id="<?php echo $rec->ID_RECURSO;?>">Eliminar</button></td>
+                            </tr>
+                          <?php
+                              
+                            }
+                          endif;
+                        ?>
+                    </tbody>
+                  </table>
+
+                
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+              </div>
+            
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+
 
     </section>
     <!-- /.content -->
