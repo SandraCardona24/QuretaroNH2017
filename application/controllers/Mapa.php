@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @copyright NEORIS, Todos los derechos reservados 2017
 */
 
-class Recurso_model extends CI_Model{
+class Mapa extends CI_Controller{
 	/**
 	*funcion constrcutor de la clase Recursos
 	*/

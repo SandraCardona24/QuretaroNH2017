@@ -10,15 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
-	<link rel="stylesheet" href="<?=base_url()?>rsc/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="<?=base_url()?>rsc/css/font-awesome.min.css">
 	<!-- Ionicons -->
-	<link rel="stylesheet" href="<?=base_url()?>rsc/css/ionicons.min.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/bower_components/Ionicons/css/ionicons.min.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="<?=base_url()?>rsc/css/AdminLTE.min.css">
 	<!-- iCheck -->
-	<link rel="stylesheet" href="<?=base_url()?>rsc/css/blue.css">
+	<link rel="stylesheet" href="<?=base_url()?>rsc/plugins/iCheck/square/blue.css">
 	<!-- Custom -->
 	<link rel="stylesheet" href="<?=base_url()?>rsc/css/login.css">
 	<!-- Google Font -->
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
                 <div class="col-xs-8">
                   <div class="checkbox icheck">
                     <label>
-                    <input type="checkbox">&nbsp;Remember Me
+                    <input type="checkbox">&ensp;Remember Me
                   </label>
                   </div>
                 </div>

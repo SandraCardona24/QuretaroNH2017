@@ -9,12 +9,10 @@
 	<link rel="stylesheet" href="<?=base_url()?>rsc/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?=base_url()?>rsc/css/ionicons.css">
 	<link rel="stylesheet" href="<?=base_url()?>rsc/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="css/waves.css">
-    <!-- Mapa Aqui -->
-    <script hrfer ="<?=base_url()?>rcs/ammap/ammap.js" type="text/javascript"></script>
-    <script  hrfer ="<?=base_url()?>rcs/ammap/maps/js/worldLow.js" type="text/javascript"></script>
-    <script  hrfer ="<?=base_url()?>rcs/ammap/maps/js/mexicoLow.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="<?=base_url()?>rsc/ammap/ammap.css" type="text/css" media="all" />
+    <script src="<?=base_url()?>rsc/js/jquery.min.js"></script>
+    <script src="<?=base_url()?>rsc/ammap/ammap.js" ></script>
+    <script src="<?=base_url()?>rsc/ammap/maps/js/mexicoLow.js"></script>
 </head>
 
 <body>
@@ -101,6 +99,9 @@
        
         <p id="resultado" style="font-weight: bold; margin-top: 6px;"></p>
     </header>
+        <!-- Mapa Aqui -->
+
+
 </body>
 
 </html>
