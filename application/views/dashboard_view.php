@@ -525,6 +525,7 @@
 <!-- Script para recursos -->
 <script src="<?=base_url()?>rsc/js/progressbar.js"></script>
 <script src="<?=base_url()?>rsc/js/recursos.js"></script>
+<script src="<?=base_url()?>rsc/js/proyectos.js"></script>
 <script src="<?=base_url()?>rsc/js/recursos_edit.js"></script>
 <script>
     $(function () {

@@ -25,7 +25,7 @@
               </div>
               <!-- /.box-header -->
               <!-- form start -->
-              <form class="form-horizontal">
+              <form method="post" action="updateOrden" class="form-horizontal">
                 <div class="box-body">
                     <div class="form-group">
                         <label for="inputLastName3" class="col-sm-2 control-label">Descripción de Orden</label>
@@ -80,98 +80,101 @@
                     </div>
 
                     <div class="box-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">Proyecto</label>
-                                <div class="col-sm-10">
-                                    <select name="id_proyecto" class="form-control">
-                                        <option value="0">Seleccione</option>                 
-                                        <?php foreach ($proyectos['proyecto'] as $p) { ?>
-                                        <option value="<?=$p->ID_PROYECT; ?>"><?=$p->NOM_PROYECT; ?></option>
-                                        <?php } ?>                                        
-                                    </select>
-                                </div>
-                            </div>
 
-                            <!-- /.box-body -->
-                            <div class="box-footer">
-                                <button type="submit" class="btn btn-default">Cancelar</button>
-                                <button type="submit" class="btn btn-danger pull-right">Editar</button>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Proyecto</label>
+                            <div class="col-sm-10">
+                                <select name="id_proyecto" class="form-control">
+                                    <option value="0">Seleccione</option>                 
+                                    <?php foreach ($proyectos['proyecto'] as $p) { ?>
+                                    <option value="<?=$p->ID_PROYECT; ?>"><?=$p->NOM_PROYECT; ?></option>
+                                    <?php } ?>                                        
+                                </select>
                             </div>
-                            <!-- /.box-footer -->
-                        </form>
+                        </div>
+
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-default">Cancelar</button>
+                            <button type="submit" class="btn btn-danger pull-right">Editar</button>
+                        </div>
+                        <!-- /.box-footer -->
+
                     </div>
-                </div>
                 </form>
-                </div>
             </div>
 
-                <div class="col-xs-12">
-                    <div class="box">
-                        <div class="box-header">
-                          <h3 class="box-title">Registro de Orden</h3>
-                      </div>
-                      <!-- /.box-header -->
-                      <div class="box-body">
-                          <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                              <tr>
-                                <th>ID</th>
-                                <th>Descripción de Orden</th>
-                                <th>Horas Estimadas</th>
-                                <th>Fecha Inicio</th>
-                                <th>Fecha Final</th>
-                                <th>Estatus</th>
-                                <th>Cliente</th>
-                                <th>Proyecto</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty ($data['proyectos'])) { ?>
-                            <?php foreach ($data['proyectos'] as $d) { ?>
-                            <tr>
-                                <td><?=$d->ID_PROYECT; ?></td>
-                                <td><?=$d->NOM_PROYECT  ; ?></td>
-                                <td><?=$d->DESC_PROYECT; ?></td>
-                                <td><?=$d->FEC_IN_OT; ?></td>
-                                <td><?=$d->FEC_FN_OT; ?></td>
-                                <td><?=$d->DESC_ESTATUS; ?></td>
-                                <td><?=$d->LIDER_CLIENTE_OT; ?></td>
-                                <td><?=$d->NOM_PROYECT; ?></td>
-                            </tr>               
-                            <?php } ?>
-
-                            <?php }  else { ?>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><strong><?="SIN REGISTROS";?></strong></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <?php } ?>  
-                        </tbody>
-                        <tfoot>
-                          <tr>
-                            <th>Orden de Trbajo</th>
-                            <th>Descripción de Orden</th>
-                            <th>Horas Estimadas</th>
-                            <th>Fecha Inicio</th>
-                            <th>Fecha Final</th>
-                            <th>Estatus</th>
-                            <th>Cliente</th>
-                            <th>Proyecto</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-            <!-- /.box-body -->
         </div>
     </div>
-    <!-- /.box -->
+
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Registro de Orden</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Descripción de Orden</th>
+                    <th>Horas Estimadas</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Final</th>
+                    <th>Estatus</th>
+                    <th>Cliente</th>
+                    <th>Proyecto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty ($ordenes['ordenes'])) { ?>
+                <?php foreach ($ordenes['ordenes'] as $d) { ?>
+                <tr>
+                    <td><?=$d->ID_OT; ?></td>
+                    <td><?=$d->DESC_OT  ; ?></td>
+                    <td><?=$d->HORAS_OT; ?></td>
+                    <td><?=$d->FEC_IN_OT; ?></td>
+                    <td><?=$d->FEC_FN_OT; ?></td>
+                    <td><?=$d->DESC_ESTATUS; ?></td>
+                    <td><?=$d->LIDER_CLIENTE_OT; ?></td>
+                    <td><?=$d->NOM_PROYECT; ?></td>
+                    <td><button class="editar-ot btn btn-warning btn-block" data-id="<?php echo $d->ID_OT;?>">Editar</button></td>
+                    <td><button class="eliminar-ot btn btn-danger btn-block" data-id="<?php echo $d->ID_OT;?>">Eliminar</button></td>
+                </tr>               
+                <?php } ?>
+
+                <?php }  else { ?>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><strong><?="SIN REGISTROS";?></strong></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?php } ?>  
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Orden de Trbajo</th>
+                <th>Descripción de Orden</th>
+                <th>Horas Estimadas</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Final</th>
+                <th>Estatus</th>
+                <th>Cliente</th>
+                <th>Proyecto</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<!-- /.box-body -->
+</div>
+</div>
+<!-- /.box -->
 </div>
 
 </section>

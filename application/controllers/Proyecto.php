@@ -16,10 +16,10 @@ class Proyecto extends CI_Controller {
 		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
 		$data['estatus'] = $this->Proyecto_model->combo_estatus();
 		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();	
-	
+
 
 		$vista['vista'] = $this->load->view('agregarProyecto_view', $data, TRUE);
- 
+
 		$this->load->view('dashboard_view', $vista);		
 		
 	}
@@ -60,12 +60,12 @@ class Proyecto extends CI_Controller {
 		if($this->proyecto_model->inserta_proyecto($arr_insertar)) {
 
 			redirect(base_url()."index.php/proyecto");
-						
+
 		} 		
 	}
 
 	public function cancelar_proyecto(){
-		$idProyecto = $this->input->post("identificador");
+		$idProyecto = $this->input->post("idProy");
 		$json = array();
 
 		if ($idProyecto == NULL) {
@@ -97,6 +97,51 @@ class Proyecto extends CI_Controller {
 
 		$this->load->view("dashboard_view", $vista);
 
+
+	}
+	public function getProyecto(){
+		
+		$idPro = $this->input->post("idProy");
+		$json = array();
+
+		if($idPro == NULL){
+
+			$json['response_code'] = '500';
+
+		}else{
+			$proyecto = array();
+			$proyecto = $this->Proyecto_model->getProyectoById($idPro);
+
+			if(!is_null($proyecto)){
+				$json['response_code'] = '200';
+				$json['proyecto'] = $proyecto;
+			}else{
+				$json['response_code'] = '500';
+			}
+
+		}
+		
+		echo json_encode($json);
+
+	}
+	public function updateProyecto() {
+
+		$id = $this->input->post("id_proyect");
+		if ($id != 0) {
+
+			$data = array(
+				'nom_proyect' => $this->input->post('nom_proyect'),
+				'desc_proyect' => $this->input->post('desc_proyect'),
+				'id_tec' => $this->input->post('id_tec'),
+				'fecha_ini' => $this->input->post('fecha_ini'),
+				'fecha_ter' => $this->input->post('fecha_ter'),
+				'id_estatus' => $this->input->post('id_estatus'),
+				'id_oficina' => $this->input->post('id_oficina')
+			);
+			
+			$this->Proyecto_model->updateProyect($id, $data);
+			$this->editar();
+		}
 
 	}
 

@@ -24,26 +24,25 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form method="post" action="updateProyecto" class="form-horizontal">
                     <div class="box-body">
                         <div class="form-group">
                             <label for="inputUser3" class="col-sm-2 control-label">Nombre del Proyecto</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputProyecto" placeholder="Nombre del Proyecto">
+                                <input name="nom_proyect" type="text" class="form-control" id="nom_proyect" placeholder="Nombre del Proyecto">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Descripción del Proyecto</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputDescripcion" placeholder="Descripción del Proyecto">
+                                <input name="desc_proyect" type="text" class="form-control" id="desc_proyect" placeholder="Descripción del Proyecto">
                             </div>
                         </div>
-                        <div class="box-body">
-                            <form role="form">
+                        <div class="box-body">                   
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Tecnología</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select id="id_tec" name="id_tec" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <?php foreach ($tecnologia as $est) {?>
                                             <option value="<?=$est->ID_TEC?>"><?=$est->NOMBRE_TEC;?></option>
@@ -58,7 +57,7 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" class="form-control pull-right" id="datepickerInicio">
+                                            <input name="fecha_ini" type="text" class="form-control pull-right" id="fecha_ini">
                                         </div>
                                     </div>
                                 </div>
@@ -69,14 +68,14 @@
                                             <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                             </div>
-                                            <input type="text" class="form-control pull-right" id="datepickerFin">
+                                            <input name="fecha_ter" type="text" class="form-control pull-right" id="fecha_ter">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Estatus</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select id="id_estatus" name="id_estatus" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <?php foreach ($estatus as $est) {?>
                                             <option value="<?=$est->ID_ESTATUS?>"><?=$est->DESC_ESTATUS;?></option>
@@ -87,7 +86,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Oficina</label>
                                     <div class="col-sm-10">
-                                        <select class="form-control">
+                                        <select id="id_oficina" name="id_oficina" class="form-control">
                                             <option value="0">Seleccione</option>
                                             <?php foreach ($oficina as $est) {?>
                                             <option value="<?=$est->ID_OFICINA?>"><?=$est->NOMBRE_OFI;?></option>
@@ -95,13 +94,14 @@
                                         </select>
                                     </div>
                                 </div>
-                            </form>
+                           
                         </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-default">Cancelar</button>
-                        <button type="submit" class="btn btn-info pull-right">Añadir</button>
+                        <input type="hidden" id="id_proyect" name="id_proyect">
+                        <button type="reset" value="reset" class="btn btn-default">Cancelar</button>
+                        <button type="submit" class="btn btn-info pull-right">Editar</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
@@ -115,7 +115,7 @@
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="tabla_proyecto" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Nombre del Proyecto</th>
@@ -137,8 +137,10 @@
                         <td><?php echo $rec->NOM_PROYECT;?></td>
                         <td><?php echo $rec->FECHA_INI;?></td>
                         <td><?php echo $rec->FECHA_TER; ?></td>
-                        <td><?php echo $rec->DESC_ESTATUS; ?></td>
+                        <td id="estatus_<?=$rec->ID_PROYECT;?>"><?php echo $rec->DESC_ESTATUS; ?></td>
                         <td><?php echo $rec->NOMBRE_OFI; ?></td>
+                        <td><button class="editar-pro btn btn-warning btn-block" data-id="<?=$rec->ID_PROYECT;?>">Editar</button></td>
+                        <td><button class="eliminar-pro btn btn-danger btn-block" data-id="<?=$rec->ID_PROYECT;?>">Cancelar</button></td>
                     </tr>
                     <?php
 

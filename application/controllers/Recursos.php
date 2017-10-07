@@ -43,7 +43,7 @@ class Recursos extends CI_Controller {
 
 		$fragment2['vista'] = $this->load->view("editarRecurso_view", $datos, TRUE);
 
-		$this->load->view("dashboard_view",$fragment2);
+		$this->load->view("dashboard_view", $fragment2);
 	}
 
 	/**
