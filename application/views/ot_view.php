@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div>
-		<form action="insertOrden" method="post">
+		<form action="OT/insertOrden" method="post">
 			<label>Desc</label>
 			<input type="text" name="desc"><br>
 			<label>Horas</label>
@@ -37,8 +37,9 @@
 				<th>FECHA FIN</th>
 				<th>ESTATUS</th>
 				<th>LIDER</th>
-			</tr>			
-			<?php foreach ($ordenes['ordenes'] as $d) { ?>
+			</tr>
+			<?php if (!empty ($ordenes['ordenes'])) { ?>
+				<?php foreach ($ordenes['ordenes'] as $d) { ?>
 				<tr>
 					<td><?=$d->ID_OT; ?></td>
 					<td><?=$d->DESC_OT; ?></td>
@@ -48,7 +49,9 @@
 					<td><?=$d->DESC_ESTATUS; ?></td>
 					<td><?=$d->LIDER_CLIENTE_OT; ?></td>
 				</tr>				
-			<?php } ?>				
+				<?php } ?>	
+			<?php } ?>			
+			
 			
 		</table>
 
