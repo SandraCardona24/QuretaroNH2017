@@ -210,7 +210,7 @@
           </a>
           <ul class="treeview-menu">
             <li id="menuActivoAgregarProyecto"><a href="<?=base_url()?>index.php/Proyecto"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li id="menuActivoEditarProyecto"><a href="<?=base_url()?>index.php/Proyecto/Editar"><i class="fa fa-minus"></i>Editar</a></li>
+            <li id="menuActivoEditarProyecto"><a href="<?=base_url()?>index.php/Proyecto/Editar"><i class="fa fa-minus"></i>Ver / Editar</a></li>
           </ul>
         </li>
         <li class="menuActivoRecurso treeview">
@@ -223,7 +223,7 @@
           </a>
           <ul class="treeview-menu">
             <li id="menuActivoAgregarRecurso"><a href="<?=base_url()?>index.php/Recursos"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li id="menuActivoEditarRecurso"><a href="<?=base_url()?>index.php/Recursos/EditarRecurso"><i class="fa fa-minus"></i>Editar</a></li>
+            <li id="menuActivoEditarRecurso"><a href="<?=base_url()?>index.php/Recursos/EditarRecurso"><i class="fa fa-minus"></i>Ver / Editar</a></li>
           </ul>
         </li>
         <li class="menuActivoOT treeview">
@@ -236,7 +236,7 @@
           </a>
           <ul class="treeview-menu">
             <li id="menuActivoAgregarOT"><a href="<?=base_url()?>index.php/OT"><i class="fa fa-plus"></i>Agregar</a></li>
-            <li id="menuActivoEditarOT"><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Editar</a></li>
+            <li id="menuActivoEditarOT"><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Ver / Editar</a></li>
           </ul>
         </li>
         <li class="menuActivoConfOT treeview">
@@ -249,7 +249,7 @@
           </a>
           <ul class="treeview-menu">
             <li id="menuActivoAgregarConfOT"><a href="<?=base_url()?>index.php/ConfiguracionOT"><i class="fa fa-plus"></i>Configurar</a></li>
-            <li id="menuActivoEditarConfOT"><a href="<?=base_url()?>index.php/ConfiguracionOT/editarTO"><i class="fa fa-minus"></i>Editar COnfiguracion</a></li>
+            <li id="menuActivoEditarConfOT"><a href="<?=base_url()?>index.php/ConfiguracionOT/editarTO"><i class="fa fa-minus"></i>Ver / Editar</a></li>
           </ul>
         </li>
       </ul>
