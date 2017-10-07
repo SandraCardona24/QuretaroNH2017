@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @copyright NEORIS, Todos los derechos reservados 2017
 */
 //CLASE DE Admin_ model
-class ConfiguracionOT_model extends CI_Model{
+class Admin_model extends CI_Model{
 	
 	/**
 	*funcion constructor de login_model
