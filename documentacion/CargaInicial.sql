@@ -49,13 +49,13 @@ insert into tecnologia (ID_tec,nombre_tec) values(12,"Android");
 insert into usuario (NOMBRE_USR,PASSWORD_USR,ID_RECURSO,ID_ESTAT) values("prueba@neoris.com","1234",1,21);
 insert into usuario (NOMBRE_USR,PASSWORD_USR,ID_RECURSO,ID_ESTAT) values("yran@neoris.com","1234",7,21);
 
-insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(1,"Noe","Ramos","Lopez",25,1,1,3);
-insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(2,"Juan Luis","Perez","Ramirez",25,1,1,3);
-insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(3,"Marco Polo","Lopez","Quintana",25,1,1,3);
-insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(4,"Santiago abram","Garcia","Pedraza",25,1,1,3);
-insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(5,"Diego","Colchado","Santarriaga",25,1,1,3);
-insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(6,"Leopoldo","Espinosa","Ramires",25,1,1,3);
-insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(7,"Yran Joan","Arvizu","Espinosa",25,1,1,3);
+insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(1,"Noe","Ramos","Lopez",5,1,1,3);
+insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(2,"Juan Luis","Perez","Ramirez",5,1,1,3);
+insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(3,"Marco Polo","Lopez","Quintana",5,1,1,3);
+insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(4,"Santiago abram","Garcia","Pedraza",5,1,1,3);
+insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(5,"Diego","Colchado","Santarriaga",5,1,1,3);
+insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(6,"Leopoldo","Espinosa","Ramires",5,1,1,3);
+insert into recurso (id_recurso,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO) values(7,"Yran Joan","Arvizu","Espinosa",5,1,1,3);
 
 insert into oficina (ID_OFICINA,nombre_ofi, calle_ofi, num_ofi, colonia_ofi, telefono_ofi, ciudad_ofi, latitud, longitud) values (4,"Culiacan", "Tecnologico","201", "Industrializacion", "442-564-9875", "Culiacan", "24.805446","-107.419540");
 insert into oficina (ID_OFICINA,nombre_ofi, calle_ofi, num_ofi, colonia_ofi, telefono_ofi, ciudad_ofi, latitud, longitud) values (2,"Ciudad de Mexico", "Zaragoza","65", "Teotihuacan", "554-620-4585", "Ciudad de Mexico", "19.417459", "-99.146384");
@@ -70,5 +70,5 @@ insert into orden_trabajo(ID_OT,DESC_OT,HORAS_OT,FEC_IN_OT,FEC_FN_OT,ID_ESTATUS,
 insert into tarea (ID_TA,DESC_TA ,FEC_IN_TA ,FEC_FN_TA ,HORAS_TA ,ID_ESTATUS )values(1,'Revision','2017-10-06','2017-10-07',8,20);
 insert into tarea (ID_TA,DESC_TA ,FEC_IN_TA ,FEC_FN_TA ,HORAS_TA ,ID_ESTATUS )values(2,'Construccion','2017-10-06','2017-10-07',8,20);
 
-insert into det_rec_proy(ID_PROYECT,ID_RECURSO,ID_TAREA ) values(1,1,1);
-insert into det_rec_proy(ID_PROYECT,ID_RECURSO,ID_TAREA ) values(1,2,1);
+insert into det_rec_proy(ID_OT,ID_RECURSO,ID_TAREA ) values(1,1,1);
+insert into det_rec_proy(ID_OT,ID_RECURSO,ID_TAREA ) values(1,2,1);
