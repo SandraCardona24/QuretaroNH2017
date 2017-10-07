@@ -14,11 +14,10 @@ class Proyecto extends CI_Controller {
 		$data = array();
 		$data['proyectos'] = $this->Proyecto_model->consulta_proyectos();
 		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
-		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
-		
-		$vista['vista'] = $this->load->view('agregarProyecto_view', $data, TRUE);	
- 
- 
+		$data['estatus'] = $this->Proyecto_model->combo_estatus();
+		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();	
+	
+
 		$vista['vista'] = $this->load->view('agregarProyecto_view', $data, TRUE);
  
 		$this->load->view('dashboard_view', $vista);		
