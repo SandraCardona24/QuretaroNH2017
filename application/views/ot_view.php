@@ -22,7 +22,7 @@
 				<?php } ?>
 			</select><br>
 			<label>Estatus</label>
-			<select name="id_estatus">
+			<select name="id_proyecto">
 				<option value="0">Seleccione</option>
 				<?php foreach ($proyectos['proyecto'] as $e) { ?>
 				<option value="<?=$e->ID_PROYECT; ?>"><?=$e->NOM_PROYECT; ?></option>					

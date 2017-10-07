@@ -8,17 +8,17 @@ class OT extends CI_Controller {
 		$this->load->model("OT_model");
 	}
 	
-	public function index(){
-		
+	public function index(){		
 
 		$estatus = $this->getEstatus();	
 		$proyectos = $this->getProyecto();
-		$vista = $this->load->view('agregarOT_view', '', TRUE);
 		$data = array(
 			'estatus' => $estatus,
-			'proyectos' => $proyectos,
-			'vista' => $vista);
-		$this->load->view("dashboard_view", $data);
+			'proyectos' => $proyectos);
+
+		$vista['vista'] = $this->load->view('agregarOT_view', $data, TRUE);
+
+		$this->load->view("dashboard_view", $vista);
 	}
 
 		public function EditarOT(){
