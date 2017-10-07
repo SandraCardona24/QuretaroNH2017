@@ -1,17 +1,27 @@
 <?php
 class Proyecto extends CI_Controller {
 
+	public function __construct(){
+		parent:: __construct();
+		$this->load->model("Proyecto_model");
+	}
+
+
 
 	public function index()
 	{
  
 		$this->load->helper("url");
 				 
-		$this->load->view("alta_proyecto_view");
+		//$this->load->view("alta_proyecto_view");
 
-//		$data = array();
-//		$data["consulta_proyecto"] = $this->proyecto_model->consulta_proyectos();
-//		$this->load->view('alta_proyecto_view', $data);
+		$data = array();
+		$data['proyectos'] = $this->Proyecto_model->consulta_proyectos();
+		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
+
+		$this->load->view('alta_proyecto_view', $data);
+
+		
 		
 	}
 	public function insertar()
@@ -31,7 +41,7 @@ class Proyecto extends CI_Controller {
 		$arr_insertar["fecha_ter"] = $fecha_ter;
 		$arr_insertar["desc_proyect"] = $desc_proyect;
 		$arr_insertar["id_tec"] = $id_tec;
-		$arr_insertar["id_estatus"] = '1';
+		$arr_insertar["id_estatus"] = '22';
 
 		$this->load->model('proyecto_model');
 
