@@ -49,7 +49,18 @@
 					<td><?=$d->DESC_ESTATUS; ?></td>
 					<td><?=$d->LIDER_CLIENTE_OT; ?></td>
 				</tr>				
-				<?php } ?>	
+				<?php } ?>
+
+			<?php }  else { ?>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><?="SIN REGISTROS";?></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
 			<?php } ?>			
 			
 			
