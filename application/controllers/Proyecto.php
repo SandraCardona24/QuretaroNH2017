@@ -16,6 +16,8 @@ class Proyecto extends CI_Controller {
 		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
 		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
 		
+		$vista['vista'] = $this->load->view('agregarProyecto_view', $data, TRUE);	
+ 
  
 		$vista['vista'] = $this->load->view('agregarProyecto_view', $data, TRUE);
  
