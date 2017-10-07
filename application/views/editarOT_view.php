@@ -30,31 +30,41 @@
                             <div class="form-group">
                                 <label for="inputUser3" class="col-sm-2 control-label">Orden de Trabajo </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Orden de Trabajo">
+                                    <input type="text" class="form-control" id="inputOT" placeholder="Orden de Trabajo">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputLastName3" class="col-sm-2 control-label">Descripción de Orden</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Descripción de la Orden">
+                                    <input type="text" class="form-control" id="inputDO" placeholder="Descripción de la Orden">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputLastName3" class="col-sm-2 control-label">Horas Estimadas</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Horas Estimadas para el Proyecto ">
+                                    <input type="text" class="form-control" id="inputHE" placeholder="Horas Estimadas para el Proyecto ">
                                 </div>
                             </div>
 							<div class="form-group">
-                                <label for="inputLastName3" class="col-sm-2 control-label">Fecha Inicio</label>
+                                <label class="col-sm-2 control-label">Fecha inicio</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Fecha de Inicio de la Orden">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control pull-right" id="datepickerInicio">
+                                    </div>
                                 </div>
                             </div>
-							<div class="form-group">
-                                <label for="inputLastName3" class="col-sm-2 control-label">Fecha Final</label>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Fecha Fin</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Fecha Final de la Orden">
+                                    <div class="input-group date">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                        <input type="text" class="form-control pull-right" id="datepickerFin">
+                                    </div>
                                 </div>
                             </div>
 							<div class="form-group">
@@ -70,7 +80,7 @@
                                 </div>
                             </div>
 							
-							 <div class="box-body">
+							<div class="box-body">
                                 <form role="form">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Proyecto</label>
@@ -84,17 +94,18 @@
                                             </select>
                                         </div>
                                     </div>
-							
-                        <!-- /.box-body -->
-                        <div class="box-footer">
-                            <button type="submit" class="btn btn-default">Cancelar</button>
-                            <button type="submit" class="btn btn-danger pull-right">Editar</button>
+                                    <!-- /.box-body -->
+                                    <div class="box-footer">
+                                        <button type="submit" class="btn btn-default">Cancelar</button>
+                                        <button type="submit" class="btn btn-danger pull-right">Editar</button>
+                                    </div>
+                                <!-- /.box-footer -->
+                                </form>
+                            </div>
                         </div>
-                    <!-- /.box-footer -->
                     </form>
                 </div>
             </div>
-
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
