@@ -250,7 +250,19 @@
           <ul class="treeview-menu">
             <li><a href="<?=base_url()?>index.php/OT"><i class="fa fa-plus"></i>Agregar</a></li>
             <li><a href="<?=base_url()?>index.php/OT/EditarOT"><i class="fa fa-minus"></i>Editar</a></li>
-            <li><a href="<?=base_url()?>index.php/ConfiguracionOT"><i class="fa fa-plus"></i>Configurar OT</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-tasks"></i>
+            <span>Configurar OT</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?=base_url()?>index.php/ConfiguracionOT"><i class="fa fa-plus"></i>Configurar</a></li>
+            <li><a href="<?=base_url()?>index.php/ConfiguracionOT/editarTO"><i class="fa fa-minus"></i>Editar COnfiguracion</a></li>
           </ul>
         </li>
       </ul>

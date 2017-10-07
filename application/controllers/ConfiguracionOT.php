@@ -29,4 +29,16 @@ class ConfiguracionOT extends CI_Controller {
 
 		$this->load->view("dashboard_view", $fragment1);
 	}
+
+	public function editarTO(){
+		$datos = array();
+		$datos['recursos'] = $this->ConfiguracionOT_model->getRecursos();
+		$datos['proyectos'] = $this->ConfiguracionOT_model->getProyectos();
+		$datos['ordenes'] = $this->ConfiguracionOT_model->getOrdenes();
+
+		$fragment1 = array();
+		$fragment1['vista'] = $this->load->view("configurarOT_edit_view",$datos, TRUE);
+
+		$this->load->view("dashboard_view", $fragment1);
+	}
 }	
