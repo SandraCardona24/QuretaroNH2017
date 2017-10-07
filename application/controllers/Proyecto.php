@@ -38,7 +38,7 @@ class Proyecto extends CI_Controller {
 		$arr_insertar["fecha_ter"] = $fecha_ter;
 		$arr_insertar["desc_proyect"] = $desc_proyect;
 		$arr_insertar["id_tec"] = $id_tec;
-		$arr_insertar["id_estatus"] = '22';
+		$arr_insertar["id_estatus"] = '4';
 		$arr_insertar["id_oficina"] = $id_ofi;
 
 		$this->load->model('proyecto_model');
