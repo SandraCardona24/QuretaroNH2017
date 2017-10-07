@@ -78,7 +78,7 @@ class Recurso_model extends CI_Model{
 	}
 
 	public function eliminarRecurso($id){
-		$this->db->set('ID_ESTATUS',20);
+		$this->db->set('ID_ESTATUS',21);
 		$this->db->where('ID_RECURSO',$id);
 		$this->db->update('RECURSO');
 		return true;	

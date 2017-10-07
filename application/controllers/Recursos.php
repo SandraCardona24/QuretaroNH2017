@@ -151,7 +151,7 @@ class Recursos extends CI_Controller {
 			$json['response_code'] = '500';
 		}else{
 
-			if($this->Recurso_model->eliminarRecurso()){
+			if($this->Recurso_model->eliminarRecurso($idRecursoE)){
 				$json['response_code'] = '200';	
 			}else{
 				$json['response_code'] = '500';	

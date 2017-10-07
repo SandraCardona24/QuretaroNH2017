@@ -59,14 +59,16 @@ $(function(){
 		});
 
 	});
+	
+	function limpiaCampos(){
+		$("#identi").val("");
+		$("#nom").val("");
+		$("#pater").val("");
+		$("#mater").val("");
+		$('#estatus').val('0');
+		$('#tp').val('0');
+		$('#ts').val('0');
+		$('#ps').val('0');
+	}
+});	
 
-function limpiaCampos(){
-	$("#identi").val("");
-	$("#nom").val("");
-	$("#pater").val("");
-	$("#mater").val("");
-	$('#estatus').val('0');
-	$('#tp').val('0');
-	$('#ts').val('0');
-	$('#ps').val('0');
-}
