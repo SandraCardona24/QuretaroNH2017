@@ -60,30 +60,21 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <div class="alert alert-info alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <a href="#" style="text-decoration: none;"><h4><i class="icon fa fa-info"></i> Proyecto A</h4></a>
-                            <ul>
-                                <li><strong>Objetivo:</strong>&ensp;Desarrollar app. móvil</li>
-                                <li><strong>Descripción:</strong>&ensp;Desarrollo de aplicacióm móvil para dispositivos iOS y Android.</li>
-                            </ul>
-                        </div>
-                        <div class="alert alert-info alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <a href="#" style="text-decoration: none;"><h4><i class="icon fa fa-info"></i> Proyecto B</h4></a>
-                            <ul>
-                                <li><strong>Objetivo:</strong>&ensp;Desarrollar app. móvil</li>
-                                <li><strong>Descripción:</strong>&ensp;Desarrollo de aplicacióm móvil para dispositivos iOS y Android.</li>
-                            </ul>
-                        </div>
-                        <div class="alert alert-info alert-dismissible">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <a href="#" style="text-decoration: none;"><h4><i class="icon fa fa-info"></i> Proyecto C</h4></a>
-                            <ul>
-                                <li><strong>Objetivo:</strong>&ensp;Desarrollar app. móvil</li>
-                                <li><strong>Descripción:</strong>&ensp;Desarrollo de aplicacióm móvil para dispositivos iOS y Android.</li>
-                            </ul>
-                        </div>
+                        <?php
+                            if(!is_null($proyectos)) :
+                                foreach ($proyectos as $py) {?>
+                                    <div class="alert alert-info alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <a href="#"  class="proyect" data-id="<?php  echo $py->ID_PROYECT?>" style="text-decoration: none;"><h4><i class="icon fa fa-info "></i><?php echo $py->NOM_PROYECT;?></h4></a>
+                                        <ul>
+                                            <li><strong>Objetivo:</strong>&ensp;<?php echo $py->DESC_OT;?></li>
+                                            <li><strong>Descripción:</strong>&ensp;<?php echo $py->DESC_PROYECT;?></li>
+                                        </ul>
+                                    </div>
+                                <?php
+                                }
+                            endif;
+                        ?>
                     </div>
                     <!-- /.box-body -->
                 </div>

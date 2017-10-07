@@ -19,10 +19,32 @@ class Admin extends CI_Controller {
 	*Funcon para cargar la vista
 	*/
 	public function index(){
-		
-		$data[] = array();
-		$data['vista'] = $this->load->view('inicio_view', '', TRUE);
+		$datos = array();
+		$datos['proyectos'] = $this->Admin_model->getProyecto();
 
-		$this->load->view("dashboard_view", $data);
+		$fragment = array();
+		$fragment['vista'] = $this->load->view('inicio_view', $datos, TRUE);
+
+		$this->load->view("dashboard_view", $fragment);
+	}
+
+	public function idRec(){
+		$detalle  = $this->input->post("idRec");
+		$json = array();
+
+		if($detalle == NULL){
+			$json['response_code'] = '500';
+		}else{
+			$detalleByProyecto = $this->Admin_model->getDetalle();
+
+			if(!is_null($detalleByProyecto)){
+				$json['response_code'] = '200';
+				$json['detalles'] = $detalleByProyecto;
+			}else{
+				$json['response_code'] = '500';
+			}
+			
+		}
+		echo json_encode($json);
 	}
 }
