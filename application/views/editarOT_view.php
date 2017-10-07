@@ -127,12 +127,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (!empty ($ordenes['ordenes'])) { ?>
-                            <?php foreach ($ordenes['ordenes'] as $d) { ?>
+                            <?php if (!empty ($data['proyectos'])) { ?>
+                            <?php foreach ($data['proyectos'] as $d) { ?>
                             <tr>
-                                <td><?=$d->ID_OT; ?></td>
-                                <td><?=$d->DESC_OT; ?></td>
-                                <td><?=$d->HORAS_OT; ?></td>
+                                <td><?=$d->ID_PROYECT; ?></td>
+                                <td><?=$d->NOM_PROYECT  ; ?></td>
+                                <td><?=$d->DESC_PROYECT; ?></td>
                                 <td><?=$d->FEC_IN_OT; ?></td>
                                 <td><?=$d->FEC_FN_OT; ?></td>
                                 <td><?=$d->DESC_ESTATUS; ?></td>

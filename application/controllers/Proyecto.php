@@ -32,13 +32,24 @@ class Proyecto extends CI_Controller {
 		$desc_proyect = $this->input->post('desc_proyect');
 		$id_tec = $this->input->post('id_tec');
 		$id_ofi = $this->input->post('id_oficina');
+		//mm/dd/YYYY
+		$anio = substr($fecha_ini, -4);
+		$dia = substr($fecha_ini, 3, 2);
+		$mes = substr($fecha_ini, 0, 2);
 
+		$fechaIn = $anio . "/" . $mes . "/" . $dia;
+
+		$anio = substr($fecha_ter, -4);
+		$dia = substr($fecha_ter, 3, 2);
+		$mes = substr($fecha_ter, 0, 2);
+
+		$fechaFin = $anio . "/" . $mes . "/" . $dia;
 
 		$arr_insertar = array();
 
 		$arr_insertar["nom_proyect"] = $nom_proyect;
-		$arr_insertar["fecha_ini"] = $fecha_ini;
-		$arr_insertar["fecha_ter"] = $fecha_ter;
+		$arr_insertar["fecha_ini"] = $fechaIn;
+		$arr_insertar["fecha_ter"] = $fechaFin;
 		$arr_insertar["desc_proyect"] = $desc_proyect;
 		$arr_insertar["id_tec"] = $id_tec;
 		$arr_insertar["id_estatus"] = '4';
