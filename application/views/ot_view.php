@@ -21,6 +21,13 @@
 				<option value="<?=$e->ID_ESTATUS; ?>"><?=$e->DESC_ESTATUS; ?></option>					
 				<?php } ?>
 			</select><br>
+			<label>Estatus</label>
+			<select name="id_estatus">
+				<option value="0">Seleccione</option>
+				<?php foreach ($proyectos['proyecto'] as $e) { ?>
+				<option value="<?=$e->ID_PROYECT; ?>"><?=$e->NOM_PROYECT; ?></option>					
+				<?php } ?>
+			</select><br>
 			<label>Lider</label>
 			<input type="text" name="lider"><br>
 			<input type="submit" name="Aceptar">

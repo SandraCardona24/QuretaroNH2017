@@ -32,6 +32,15 @@ class OT_model extends CI_Model{
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 
 	}
 
+	public function selectProyecto(){
+
+		$this->db->select("*");
+		$this->db->from("PROYECTO");
+		$this->db->where("ID_ESTATUS", 4);
+		$query = $this->db->get();
+		return ($query->num_rows() <= 0) ? NULL : $query->result(); 
+	}
+
 	public function updateOT($id, $datos) {
 
 		$this->db->where("ID_OT", $id);

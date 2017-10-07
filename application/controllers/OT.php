@@ -13,15 +13,23 @@ class OT extends CI_Controller {
 
 		$estatus = $this->getEstatus();
 		$ordenes = $this->getOrdenes();
+		$proyectos = $this->getProyecto();
 		$data = array(
 			'estatus' => $estatus,
-			'ordenes' => $ordenes);
+			'ordenes' => $ordenes,
+			'proyectos' => $proyectos);
 		$this->load->view("ot_view", $data);
 	}
 
 	public function getEstatus() {
 		
 		$datos['estatus'] = $this->OT_model->selectEstatus();
+		return $datos;
+	}
+
+	public function getProyecto() {
+		
+		$datos['proyecto'] = $this->OT_model->selectProyecto();
 		return $datos;
 	}
 
@@ -40,7 +48,8 @@ class OT extends CI_Controller {
 			'FEC_IN_OT' => $this->input->post('fec_in'),
 			'FEC_FN_OT' => $this->input->post('fec_fin'),
 			'ID_ESTATUS' => $this->input->post('id_estatus'),
-			'LIDER_CLIENTE_OT' => $this->input->post('lider')
+			'LIDER_CLIENTE_OT' => $this->input->post('lider'),
+			'ID_PROYECTO' => $this->input->post('id_proyecto')
 		);
 
 

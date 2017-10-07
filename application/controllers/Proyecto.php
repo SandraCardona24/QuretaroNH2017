@@ -9,25 +9,19 @@ class Proyecto extends CI_Controller {
 
 
 
-	public function index()
-	{
- 
-		$this->load->helper("url");
-				 
-		//$this->load->view("alta_proyecto_view");
+	public function index(){
 
 		$data = array();
 		$data['proyectos'] = $this->Proyecto_model->consulta_proyectos();
 		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
 		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
+		$data['vista'] = $this->load->view('agregarProyecto_view', '', TRUE);
  
-		$this->load->view('alta_proyecto_view', $data);
-
-		
+		$this->load->view('dashboard_view', $data, FALSE);		
 		
 	}
-	public function insertar()
-	{ 
+
+	public function insertar() { 
 
 		$nom_proyect = $this->input->post('nom_proyect');
 		$fecha_ini = $this->input->post('fecha_ini');

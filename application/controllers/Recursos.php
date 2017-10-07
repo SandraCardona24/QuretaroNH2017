@@ -24,8 +24,9 @@ class Recursos extends CI_Controller {
 		$datos['tecnologias'] = $this->Recurso_model->getTec();
 		$datos['puestos'] = $this->Recurso_model->getPuesto();
 		$datos['recursos'] = $this->Recurso_model->getRecursos();
+		$datos['vista'] = $this->load->view("agregarRecurso_view", '', TRUE);
 
-		$this->load->view("recurso_view",$datos);
+		$this->load->view("dashboard_view", $datos);
 	}
 
 	/**
@@ -37,8 +38,9 @@ class Recursos extends CI_Controller {
 		$datos['tecnologias'] = $this->Recurso_model->getTec();
 		$datos['puestos'] = $this->Recurso_model->getPuesto();
 		$datos['recursos'] = $this->Recurso_model->getRecursos();
+		$datos['vista'] = $this->load->view("editarRecurso_view", '', TRUE);
 
-		$this->load->view("recurso_edit_view",$datos);
+		$this->load->view("dashboard_view",$datos);
 	}
 
 	/**
