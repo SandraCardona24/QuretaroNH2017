@@ -40,15 +40,25 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputLastName3" class="col-sm-2 control-label">Fecha Inicio</label>
+                        <label class="col-sm-2 control-label">Fecha inicio</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Fecha de Inicio de la Orden">
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control pull-right" id="datepickerInicio">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputLastName3" class="col-sm-2 control-label">Fecha Final</label>
+                        <label class="col-sm-2 control-label">Fecha Fin</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Fecha Final de la Orden">
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control pull-right" id="datepickerFin">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -92,6 +102,9 @@
                         </form>
                     </div>
                 </div>
+                </form>
+                </div>
+            </div>
 
                 <div class="col-xs-12">
                     <div class="box">
