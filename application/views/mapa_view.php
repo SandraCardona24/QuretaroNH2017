@@ -56,7 +56,7 @@
                 "title": "Querétaro",
                 "latitude":  20.5880600,
                 "longitude": -100.3880600,
-		"myUrl": "https://www.amcharts.com/"
+		"myUrl": "<?=base_url()?>index.php/Admin"
             },{
                 "id": "guadalajara",
                 "svgPath": targetSVG,
