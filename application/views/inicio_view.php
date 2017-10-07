@@ -108,7 +108,7 @@
                         <div class="callout callout-warning">
                             <h4>Pendientes</h4>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="25"
+                                <div id="progress-bar-danger" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="25"
                                 aria-valuemin="0" aria-valuemax="100" style="width:25%">
                                     25%
                                 </div>
@@ -120,7 +120,7 @@
                         <div class="callout callout-success">
                             <h4>Logrado</h4>
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75"
+                                <div id="progress-bar-success" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75"
                                 aria-valuemin="0" aria-valuemax="100" style="width:75%">
                                     75%
                                 </div>

@@ -209,7 +209,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <!--<li class="header">MAIN NAVIGATION</li>-->
         <li class="active">
-          <a href="#">
+          <a href="<?=base_url()?>index.php/Admin">
             <i class="fa fa-dashboard"></i><span>Dashboard</span>
           </a>
         </li>
@@ -572,6 +572,37 @@
             autoclose: true
         })
     })
+
+    $('document').ready(function(){
+        
+        var elemD = document.getElementById("progress-bar-danger");
+        var elemS = document.getElementById("progress-bar-success");
+        
+        var totalLi = $('.callout-warning ul li').length + $('.callout-success ul li').length;
+        var widthDanger = $('.callout-warning ul li').length/totalLi * 100;
+        var widthSuccess = $('.callout-success ul li').length/totalLi * 100;
+        
+        console.log(totalLi);
+        console.log(widthDanger);
+        elemD.style.width = widthDanger + '%';
+        elemD.innerHTML = widthDanger + '%';
+
+        $('.alert-dismissible').click(function() {
+          var elemD = document.getElementById("progress-bar-danger");
+          var elemS = document.getElementById("progress-bar-success");
+          
+          var totalLi = $('.callout-warning ul li').length + $('.callout-success ul li').length;
+          var widthDanger = $('.callout-warning ul li').length/totalLi * 100;
+          var widthSuccess = $('.callout-success ul li').length/totalLi * 100;
+          
+          console.log(totalLi);
+          console.log(widthDanger);
+          elemD.style.width = widthDanger + '%';
+          elemD.innerHTML = widthDanger + '%';
+        });
+        
+    })
+
 </script>
 </body>
 </html>
