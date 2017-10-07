@@ -1,6 +1,7 @@
 <?php
 class Proyecto extends CI_Controller {
 
+
 	public function __construct(){
 		parent:: __construct();
 		$this->load->model("Proyecto_model");
@@ -52,10 +53,23 @@ class Proyecto extends CI_Controller {
 
 			redirect(base_url()."index.php/proyecto");
 						
-		} 
-		
+		} 		
 	}
 
+	public function cancelar_proyecto(){
+		$idProyecto = $this->input->post("identificador");
+		$json = array();
 
+		if ($idProyecto == NULL) {
+			$json['response_code'] = 500;
+
+		}else{
+			if ($this->Proyecto_model->cancelar_proyecto($idProyecto)) {
+				$json['response_code'] = '200';
+			}else{
+				$json['response_code'] = '500';
+			}
+		}
+		echo json_encode($json);
+	}
 }
-

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script type="text/javascript" src="<?=base_url()?>rsc/js/proyecto.js"></script>
 <div class="container">
 	<form action="<?=base_url()?>index.php/Proyecto/insertar" 
 	class="row" id="agregar-proyecto" method="post">
@@ -154,7 +154,7 @@
         <th>Fecha de termino</th>
         <th>Estatus</th>
         <th>Oficina</th>
-        <th>OT</th>
+         
         <th>Editar</th>
         <th>Eliminar</th>
       </tr>
@@ -166,14 +166,14 @@
             <tr id="tr-<?php echo $rec->ID_PROYECT;?>">
               <td><?php echo $rec->NOM_PROYECT;?></td>
               <td><?php echo $rec->DESC_PROYECT;?></td>
-              <td><?php echo $rec->ID_TEC;?></td>
+              <td><?php echo $rec->NOM_PROYECT;?></td>
               <td><?php echo $rec->FECHA_INI;?></td>
               <td><?php echo $rec->FECHA_TER; ?></td>
-              <td><?php echo $rec->ID_ESTATUS; ?></td>
-              <td><?php echo $rec->ID_OFICINA; ?></td>
-              <td><?php echo $rec->ID_OT; ?></td>
+              <td><?php echo $rec->DESC_ESTATUS; ?></td>
+              <td><?php echo $rec->NOMBRE_OFI; ?></td>
+               
               <td><button class="editar-rec btn btn-warning btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Editar</button></td>
-              <td><button class="eliminar-rec btn btn-danger btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Eliminar</button></td>
+              <td><button class="eliminar-pro btn btn-danger btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Cancelar</button></td>
             </tr>
           <?php
               
@@ -182,7 +182,5 @@
         ?>
     </tbody>
   </table>
-
-
 </div>
 <!-- /.box-body -->
