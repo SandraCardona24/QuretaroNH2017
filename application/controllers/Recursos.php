@@ -107,11 +107,14 @@ class Recursos extends CI_Controller {
 			$json['response_code'] = '500';
 
 		}else{
+			$recurso = array();
+			$recurso = $this->Recurso_model->getRecursoById($idRecurso);
 
-			if($this->Recurso_model->getRecursoById($idRecurso)){
-				$json['response_code'] = '200';	
+			if(!is_null($recurso)){
+				$json['response_code'] = '200';
+				$json['recurso'] = $recurso;
 			}else{
-				$json['response_code'] = '500';	
+				$json['response_code'] = '500';
 			}
 
 		}
@@ -120,4 +123,23 @@ class Recursos extends CI_Controller {
 
 	}//Fin de getRecurso
 
+
+	public function eliminarRecurso(){
+		
+		$idRecursoE = $this->input->post("idRecE");
+		$json = array();
+
+		if($idRecursoE == NULL){
+			$json['response_code'] = '500';
+		}else{
+
+			if($this->Recurso_model->eliminarRecurso()){
+				$json['response_code'] = '200';	
+			}else{
+				$json['response_code'] = '500';	
+			}
+		}
+
+		echo json_encode($json);
+	}
 }

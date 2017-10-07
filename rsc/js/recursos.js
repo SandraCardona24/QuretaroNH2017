@@ -62,8 +62,18 @@ $(function(){
 			data:{idRec : idRecurso},
 			success : function(json){
 				if(json.response_code == '200'){
-					alert("Registro correcto");
-					limpiaCampos();
+
+					$(json.recurso).each(function(i,r){
+						$("#identi").val(r.ID_RECURSO);
+						$("#nom").val(r.NOMBRE_REC);
+						$("#pater").val(r.APATERNO_REC);
+						$("#mater").val(r.AMATERNO_REC);
+						$('#estatus').val(r.ID_ESTATUS);
+						$('#tp').val(r.ID_TEC_PRI);	
+						$('#ts').val(r.ID_TEC_SEC);
+						$('#ps').val(r.ID_PUESTO);
+					});
+					
 				}
 			},
 			error : function(xhr){
@@ -71,6 +81,32 @@ $(function(){
 			}
 		});
 	});
+
+
+	$("#tabla_recurso").on("click",".eliminar-rec",function(){
+
+		var idRecurso = $(this).attr('data-id');
+
+		$.ajax({
+			url : "Recursos/eliminarRecurso",
+			type : "POST",
+			dataType : "json",
+			data:{idRecE : idRecurso},
+			success : function(json){
+				if(json.response_code == '200'){
+					
+				}
+			},
+			error : function(xhr){
+				alert("Algo salio Mal");
+			}
+		});
+	});
+
+
+
+	
+
 
 	function limpiaCampos(){
 		$("#identi").val("");

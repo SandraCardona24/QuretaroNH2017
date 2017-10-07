@@ -71,8 +71,15 @@ class Recurso_model extends CI_Model{
 	public function getRecursoById($id){
 		$this->db->select("ID_RECURSO,NOMBRE_REC,APATERNO_REC,AMATERNO_REC,ID_ESTATUS,ID_TEC_PRI,ID_TEC_SEC,ID_PUESTO");
 		$this->db->from("RECURSO");
+		$this->db->where("ID_RECURSO",$id);
 		$query = $this->db->get();
 		return ($query->num_rows() <= 0) ? NULL : $query->result();
 	}
 
+	public function eliminarRecurso($id){
+		$this->db->set('ID_ESTATUS',20);
+		$this->db->where('ID_RECURSO',$id);
+		$this->db->update('RECURSO');
+		return true;	
+	}
 }
