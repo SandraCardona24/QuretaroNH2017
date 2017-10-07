@@ -8,6 +8,7 @@ insert into estatus (ID_ESTATUS,desc_estatus, tipo_estatus) values(6,"Desasignad
 insert into estatus (ID_ESTATUS,desc_estatus, tipo_estatus) values(7,"Vacaciones", "r");
 insert into estatus (ID_ESTATUS,desc_estatus, tipo_estatus) values(8,"Incapacidad", "r");
 insert into estatus (ID_ESTATUS,desc_estatus, tipo_estatus) values(9,"Embarazo", "r");
+insert into estatus (ID_ESTATUS,desc_estatus, tipo_estatus) values(23,"Baja", "r");
                                                                    
 insert into estatus (ID_ESTATUS,desc_estatus, tipo_estatus) values(10,"Finalizado", "ot");
 insert into estatus (ID_ESTATUS,desc_estatus, tipo_estatus) values(11,"Cancelado", "ot");
