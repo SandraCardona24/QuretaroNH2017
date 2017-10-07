@@ -91,10 +91,10 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="callout callout-danger">
-                            <h4>Entrega en 2 días</h4>
+                            <h4 id="entrega" >Entrega en </h4>
                         </div>
                         <div class="callout callout-info">
-                            <h4>A cargo de Manager A</h4>
+                            <h4 id="encargado" >A cargo de</h4>
                         </div>
                         <div class="callout callout-warning">
                             <h4>Pendientes</h4>
@@ -104,7 +104,7 @@
                                     25%
                                 </div>
                             </div>
-                            <ul>
+                            <ul id="listaActivo">
                                 <li>Actividad C</li>
                             </ul>
                         </div>
@@ -116,7 +116,7 @@
                                     75%
                                 </div>
                             </div>
-                            <ul>
+                            <ul id="listaDesactivo">
                                 <li>Actividad A</li>
                                 <li>Actividad B</li>
                                 <li>Actividad D</li>

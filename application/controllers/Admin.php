@@ -28,18 +28,23 @@ class Admin extends CI_Controller {
 		$this->load->view("dashboard_view", $fragment);
 	}
 
-	public function idRec(){
+	public function getDetalle(){
 		$detalle  = $this->input->post("idRec");
 		$json = array();
 
 		if($detalle == NULL){
 			$json['response_code'] = '500';
 		}else{
-			$detalleByProyecto = $this->Admin_model->getDetalle();
+			$detalleByProyecto1 = $this->Admin_model->getDetalleArriba($detalle);
+			$detalleByProyecto2 = $this->Admin_model->getDetalleAbajoActiva($detalle);
+			$detalleByProyecto3 = $this->Admin_model->getDetalleAbajoInactiva($detalle);
 
-			if(!is_null($detalleByProyecto)){
+			if(!is_null($detalleByProyecto1)){
 				$json['response_code'] = '200';
-				$json['detalles'] = $detalleByProyecto;
+
+				$json['detalleA'] = $detalleByProyecto1;
+				$json['detalleBa'] = $detalleByProyecto2;
+				$json['detalleBb'] = $detalleByProyecto3;
 			}else{
 				$json['response_code'] = '500';
 			}
