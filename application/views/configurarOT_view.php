@@ -1,3 +1,4 @@
+
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -30,7 +31,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Proyecto</label>
                                     <div class="col-sm-10">
-                                        <select name="id_tec" class="form-control">
+                                        <select name="id_proy" id="id_proy" class="form-control">
                                             <option value="0">-Proyecto-</option>                                       
                                             <?php
                                                 if(!is_null($proyectos)) :

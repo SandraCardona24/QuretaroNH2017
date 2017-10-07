@@ -520,6 +520,7 @@
 <script src="<?=base_url()?>rsc/plugins/input-mask/jquery.inputmask.js"></script>
 <script src="<?=base_url()?>rsc/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 <script src="<?=base_url()?>rsc/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<script type="text/javascript" src="<?=base_url()?>rsc/js/configOt.js"></script> 
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url()?>rsc/dist/js/demo.js"></script>
 <!-- Script para recursos -->

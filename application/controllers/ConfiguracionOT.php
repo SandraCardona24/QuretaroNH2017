@@ -41,4 +41,14 @@ class ConfiguracionOT extends CI_Controller {
 
 		$this->load->view("dashboard_view", $fragment1);
 	}
+
+	public function selectCombo(id){
+		$id_proy = $this->this->post("id_proy");
+		$json = array();
+		if ($id_proy == NULL) {
+			$json["response_code"] = 500;
+		}else{
+			this->ConfiguracionOT_model->
+		}
+	}
 }	
