@@ -55,4 +55,16 @@ class OT_model extends CI_Model{
 		$this->db->update("ORDEN_TRABAJO", 10);
 	}
 
+	public function getOtById($id){
+		$query = $this->db->query("SELECT * FROM ORDEN_TRABAJO where ID_OT = " .$id);
+		return ($query->num_rows() <= 0) ? NULL : $query->result();
+	}
+
+	public function cancelar_ot($id){
+		$this->db->set("ID_ESTATUS", 11);
+		$this->db->where("ID_OT",$id);
+		$this->db->update("ORDEN_TRABAJO");
+		return TRUE;
+	}
+
 }
