@@ -2,12 +2,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Proyectos
+        Editar Configurar orden de trabajo
         <small>Agregar</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Configurar orden de trabajo</li>
+        <li class="active">Editar Configurar orden de trabajo</li>
     </ol>
 </section>
 
@@ -19,7 +19,7 @@
             <!-- Horizontal Form -->
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Alta de Proyecto</h3>
+                    <h3 class="box-title">Editar Configuracion de OT</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
@@ -108,6 +108,42 @@
                 </form>
             </div>
             <!-- /.box -->
+
+
+
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                      <h3 class="box-title">Registro de Recursos</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <table id="tabla_recurso" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>Nombre(s)</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Nombre(s)</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Status</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+            </div>
+        <!-- /.box -->
 
         </div>
 
