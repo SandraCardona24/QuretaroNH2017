@@ -40,7 +40,7 @@ class ConfiguracionOT_model extends CI_Model{
 	public function getOrdenByProy($id){
 		$this->db->select("ID_OT,DESC_OT");
 		$this->db->from("ORDEN_TRABAJO");
-		$this->db->where("ORDEN_TRABAJO",$id);
+		$this->db->where("ID_PROYECTO",$id);
 		$query = $this->db->get();
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 	
 	}

@@ -22,7 +22,7 @@ class ConfiguracionOT extends CI_Controller {
 		$datos = array();
 		$datos['recursos'] = $this->ConfiguracionOT_model->getRecursos();
 		$datos['proyectos'] = $this->ConfiguracionOT_model->getProyectos();
-		$datos['ordenes'] = $this->ConfiguracionOT_model->getOrdenes();
+		//$datos['ordenes'] = $this->ConfiguracionOT_model->getOrdenes();
 
 		$fragment1 = array();
 		$fragment1['vista'] = $this->load->view("configurarOT_view",$datos, TRUE);
@@ -42,13 +42,20 @@ class ConfiguracionOT extends CI_Controller {
 		$this->load->view("dashboard_view", $fragment1);
 	}
 
-	public function selectCombo(id){
-		$id_proy = $this->this->post("id_proy");
+	public function selectCombo(){
+		$id_proy = $this->input->post("identificador");
 		$json = array();
 		if ($id_proy == NULL) {
-			$json["response_code"] = 500;
+			$json["response_code"] = "500";
 		}else{
-			this->ConfiguracionOT_model->
+			$ordenProy = $this->ConfiguracionOT_model->getOrdenByProy($id_proy);
+			if ($ordenProy == NULL) {
+				$json["response_code"] = "500";
+			}else{
+				$json["response_code"] = "200";
+				$json["byProyect"] = $ordenProy;
+			}
 		}
+		echo json_encode($json);
 	}
 }	

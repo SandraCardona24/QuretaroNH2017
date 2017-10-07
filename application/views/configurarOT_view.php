@@ -47,17 +47,9 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Ordeb de trabajo</label>
                                     <div class="col-sm-10">
-                                        <select name="id_tec" class="form-control">
+                                        <select name="id_tec" id="orden" class="form-control">
                                             <option value="0">-Orden de trabajo-</option>                                       
-                                            <?php
-                                                if(!is_null($ordenes)) :
-                                                    foreach ($ordenes as $ord) { ?>
-                                                        <option value="<?php echo $ord->ID_OT;?>"><?php echo $ord->DESC_OT;?></option>
-                                                <?php
-                                                    }
-                                                endif;
-                                            ?>
-                                        </select>
+                                           </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
