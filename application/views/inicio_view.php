@@ -14,6 +14,7 @@
 
     <!-- Main content -->
     <section class="content">
+      
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-lg-3 col-xs-6">
@@ -50,7 +51,6 @@
 
       <!-- Main row -->
       <div id="mainRow" class="row">
-        
             <div class="col-md-6">
                 <div class="box box-default">
                     <div class="box-header with-border">
@@ -95,7 +95,6 @@
                 <div class="box box-default">
                     <div class="box-header with-border">
                         <i class="fa fa-bullhorn"></i>
-        
                         <h3 class="box-title">Detalles - Proyecto A</h3>
                     </div>
                     <!-- /.box-header -->
@@ -108,12 +107,24 @@
                         </div>
                         <div class="callout callout-warning">
                             <h4>Pendientes</h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="25"
+                                aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                    25%
+                                </div>
+                            </div>
                             <ul>
                                 <li>Actividad C</li>
                             </ul>
                         </div>
                         <div class="callout callout-success">
                             <h4>Logrado</h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                                    75%
+                                </div>
+                            </div>
                             <ul>
                                 <li>Actividad A</li>
                                 <li>Actividad B</li>
