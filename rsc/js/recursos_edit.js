@@ -115,7 +115,8 @@ $(function(){
 			data:{idRecE : idRecurso},
 			success : function(json){
 				if(json.response_code == '200'){
-					alert("Se elimino al usuario")
+					alert("Se elimino al usuario");
+					$("#tr-" + idRecurso).remove();
 				}
 			},
 			error : function(xhr){
