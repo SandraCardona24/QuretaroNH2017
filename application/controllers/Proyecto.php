@@ -17,9 +17,9 @@ class Proyecto extends CI_Controller {
 		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
 		
  
-		$this->load->view('alta_proyecto_view', $data);
+		$vista['vista'] = $this->load->view('agregarProyecto_view', $data, TRUE);
  
-		$this->load->view('dashboard_view', $data, FALSE);		
+		$this->load->view('dashboard_view', $vista);		
 		
 	}
 
@@ -78,8 +78,12 @@ class Proyecto extends CI_Controller {
 		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
 		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
 		$data['estatus'] = $this->Proyecto_model->combo_estatus();
-		$data['edicion'] = $this->Proyecto_model->editar_proyecto($id_proyect);
-		$this->load->view("editar_proyecto", $data);
+		$data['edicion'] = $this->Proyecto_model->editar_proyecto();
+
+		$vista['vista'] = $this->load->view("editarProyecto_view", $data, TRUE);
+
+
+		$this->load->view("dashboard_view", $vista);
 
 
 	}

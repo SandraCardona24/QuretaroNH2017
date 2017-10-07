@@ -39,8 +39,8 @@
 		return TRUE;
 	}
 
-	public function editar_proyecto($id_proyecto){
-		$query = $this->db->query("SELECT NOM_PROYECT, DESC_PROYECT, ID_TEC, FECHA_INI, FECHA_TER, ID_ESTATUS, ID_OFICINA FROM proyecto where ID_PROYECT = ".$id_proyecto."");
+	public function editar_proyecto(){
+		$query = $this->db->query("SELECT NOM_PROYECT, DESC_PROYECT, ID_TEC, FECHA_INI, FECHA_TER, ID_ESTATUS, ID_OFICINA FROM proyecto");
 		return ($query->num_rows() <= 0) ? NULL : $query->row(); 
 	}
 	public function combo_estatus(){

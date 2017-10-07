@@ -15,9 +15,10 @@ class OT_model extends CI_Model{
 
 	public function selectOTs(){
 
-		$this->db->select("ID_OT, DESC_OT, HORAS_OT, FEC_IN_OT, FEC_FN_OT, DESC_ESTATUS, LIDER_CLIENTE_OT");
+		$this->db->select("ID_OT, DESC_OT, HORAS_OT, FEC_IN_OT, FEC_FN_OT, DESC_ESTATUS, LIDER_CLIENTE_OT, NOM_PROYECT");
 		$this->db->from("ORDEN_TRABAJO");
 		$this->db->join("ESTATUS","ORDEN_TRABAJO.ID_ESTATUS = ESTATUS.ID_ESTATUS");
+		$this->db->join("PROYECTO","ORDEN_TRABAJO.ID_PROYECTO = PROYECTO.ID_PROYECT");
 
 		$query = $this->db->get();
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 

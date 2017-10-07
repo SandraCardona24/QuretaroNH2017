@@ -24,42 +24,36 @@
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form action="OT/insertOrden" method="post" class="form-horizontal">
                     <div class="box-body">
-                        <div class="form-group">
-                            <label for="inputUser3" class="col-sm-2 control-label">Orden de Trabajo </label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Orden de Trabajo">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Descripción de Orden</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="Descripción de la Orden">
+                                <input name="desc" type="text" class="form-control" id="inputPassword3" placeholder="Descripción de la Orden">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Horas Estimadas</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="Horas Estimadas para el Proyecto ">
+                                <input name="horas" type="text" class="form-control" id="inputPassword3" placeholder="Horas Estimadas para el Proyecto ">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Fecha Inicio</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="Fecha de Inicio de la Orden">
+                                <input name="fec_in" type="text" class="form-control" id="inputPassword3" placeholder="Fecha de Inicio de la Orden">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Fecha Final</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="Fecha Final de la Orden">
+                                <input name="fec_fin" type="text" class="form-control" id="inputPassword3" placeholder="Fecha Final de la Orden">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Estatus</label>
                             <div class="col-sm-10">
-                                <select name="id_proyecto" class="form-control">
+                                <select name="id_estatus" class="form-control">
                                     <option value="0">Seleccione</option>                 
                                         <?php foreach ($estatus['estatus'] as $e) { ?>
                                             <option value="<?=$e->ID_ESTATUS; ?>"><?=$e->DESC_ESTATUS; ?></option>
@@ -70,7 +64,7 @@
                         <div class="form-group">
                             <label for="inputLastName3" class="col-sm-2 control-label">Cliente del Proyecto</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPassword3" placeholder="Nombre del Cliente del Proyecto">
+                                <input name="lider" type="text" class="form-control" id="inputPassword3" placeholder="Nombre del Cliente del Proyecto">
                             </div>
                         </div>
 

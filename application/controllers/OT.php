@@ -27,13 +27,13 @@ class OT extends CI_Controller {
 		$estatus = $this->getEstatus();
 		$ordenes = $this->getOrdenes();
 		$proyectos = $this->getProyecto();
-		$vista = $this->load->view('editarOT_view', '', TRUE);
 		$data = array(
 			'estatus' => $estatus,
 			'ordenes' => $ordenes,
-			'proyectos' => $proyectos,
-			'vista' => $vista);
-		$this->load->view("dashboard_view", $data);
+			'proyectos' => $proyectos);
+		$vista['vista'] = $this->load->view('editarOT_view', $data, TRUE);
+
+		$this->load->view("dashboard_view", $vista);
 	}
 
 	public function getEstatus() {
