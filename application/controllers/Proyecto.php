@@ -18,7 +18,8 @@ class Proyecto extends CI_Controller {
 		$data = array();
 		$data['proyectos'] = $this->Proyecto_model->consulta_proyectos();
 		$data['tecnologia'] = $this->Proyecto_model->consulta_tecnologias();
-
+		$data['oficina'] = $this->Proyecto_model->consulta_oficinas();
+ 
 		$this->load->view('alta_proyecto_view', $data);
 
 		
@@ -32,6 +33,7 @@ class Proyecto extends CI_Controller {
 		$fecha_ter = $this->input->post('fecha_ter');
 		$desc_proyect = $this->input->post('desc_proyect');
 		$id_tec = $this->input->post('id_tec');
+		$id_ofi = $this->input->post('id_oficina');
 
 
 		$arr_insertar = array();
@@ -42,6 +44,7 @@ class Proyecto extends CI_Controller {
 		$arr_insertar["desc_proyect"] = $desc_proyect;
 		$arr_insertar["id_tec"] = $id_tec;
 		$arr_insertar["id_estatus"] = '22';
+		$arr_insertar["id_oficina"] = $id_ofi;
 
 		$this->load->model('proyecto_model');
 
@@ -52,6 +55,7 @@ class Proyecto extends CI_Controller {
 		} 
 		
 	}
+
 
 }
 

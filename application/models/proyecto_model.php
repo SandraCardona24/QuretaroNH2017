@@ -23,6 +23,11 @@
 		return ($query->num_rows() <= 0) ? NULL : $query->result(); 
 	}
 
+	public function consulta_oficinas(){
+		$query = $this->db->query("SELECT * FROM oficina");
+		return ($query->num_rows() <= 0) ? NULL : $query->result(); 
+	}
+
 } 
 
 

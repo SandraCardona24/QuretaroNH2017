@@ -82,19 +82,38 @@
 				<div class="col-sm-2">
 					<div id="val-tecnologia" class="form-group">
 						<label class="control-label"> Tecnologia </label>
-						<select name="id_tec" id="id_tec" class="form-control">
+							<select name="id_tec" id="id_tec" class="form-control">
+								<option>-------</option>
+									<?php 
+										if(!is_null($tecnologia)) :
+											foreach ($tecnologia as $tec) {?>
+                            	<option value="<?php echo $tec->ID_TEC?>">
+                            		<?php echo $tec->NOMBRE_TEC;?>
+                            	</option>
+                            		<?php
+                            		}
+                         			 endif;
+                			?>					
+						</select>						
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="form-group">
+						<label class="control-label">Oficina</label>
+						<select name="id_oficina" id="id_oficina" class="form-control">
 							<option>-------</option>
-								<?php 
-									if(!is_null($tecnologia)) :
-										foreach ($tecnologia as $tec) {?>
-                            		<option value="<?php echo $tec->ID_TEC?>"><?php echo $tec->NOMBRE_TEC;?></option>
-                            	<?php
-                                                          }
-                          endif;
-                        ?>
-					
+							<?php 
+							if (!is_null($oficina)): 
+								foreach ($oficina as $ofi) {?>
+								<option value="<?php echo $ofi->ID_OFICINA?>">
+									<?php echo $ofi->NOMBRE_OFI;?>
+								</option>
+								<?php
+							    }
+							endif; 
+
+							?>
 						</select>
-						
 					</div>
 				</div>
 
@@ -124,46 +143,46 @@
 	<!-- /.row -->
 </div>
 <!-- /.container -->
-              <div class="box-body">
-                  <table id="mytable" class="table">
-                    <thead class="thead-inverse">
-                      <tr>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Tecnologia</th>
-                        <th>Fecha de inicio</th>
-                        <th>Fecha de termino</th>
-                        <th>Estatus</th>
-                        <th>Oficina</th>
-                        <th>OT</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-                        if(!is_null($proyectos)) :
-                            foreach ($proyectos as $rec) {?>
-                            <tr id="tr-<?php echo $rec->ID_PROYECT;?>">
-                              <td><?php echo $rec->NOM_PROYECT;?></td>
-                              <td><?php echo $rec->DESC_PROYECT;?></td>
-                              <td><?php echo $rec->ID_TEC;?></td>
-                              <td><?php echo $rec->FECHA_INI;?></td>
-                              <td><?php echo $rec->FECHA_TER; ?></td>
-                              <td><?php echo $rec->ID_ESTATUS; ?></td>
-                              <td><?php echo $rec->ID_OFICINA; ?></td>
-                              <td><?php echo $rec->ID_OT; ?></td>
-                              <td><button class="editar-rec btn btn-warning btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Editar</button></td>
-                              <td><button class="eliminar-rec btn btn-danger btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Eliminar</button></td>
-                            </tr>
-                          <?php
-                              
-                            }
-                          endif;
-                        ?>
-                    </tbody>
-                  </table>
+<div class="box-body">
+  <table id="mytable" class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Tecnologia</th>
+        <th>Fecha de inicio</th>
+        <th>Fecha de termino</th>
+        <th>Estatus</th>
+        <th>Oficina</th>
+        <th>OT</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+        if(!is_null($proyectos)) :
+            foreach ($proyectos as $rec) {?>
+            <tr id="tr-<?php echo $rec->ID_PROYECT;?>">
+              <td><?php echo $rec->NOM_PROYECT;?></td>
+              <td><?php echo $rec->DESC_PROYECT;?></td>
+              <td><?php echo $rec->ID_TEC;?></td>
+              <td><?php echo $rec->FECHA_INI;?></td>
+              <td><?php echo $rec->FECHA_TER; ?></td>
+              <td><?php echo $rec->ID_ESTATUS; ?></td>
+              <td><?php echo $rec->ID_OFICINA; ?></td>
+              <td><?php echo $rec->ID_OT; ?></td>
+              <td><button class="editar-rec btn btn-warning btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Editar</button></td>
+              <td><button class="eliminar-rec btn btn-danger btn-block" data-id="<?php echo $rec->ID_PROYECT;?>">Eliminar</button></td>
+            </tr>
+          <?php
+              
+            }
+          endif;
+        ?>
+    </tbody>
+  </table>
 
-                
-              </div>
-              <!-- /.box-body -->
+
+</div>
+<!-- /.box-body -->
