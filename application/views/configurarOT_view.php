@@ -47,7 +47,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Ordeb de trabajo</label>
                                     <div class="col-sm-10">
-                                        <select name="id_tec" id="orden" class="form-control">
+                                        <select name="id_tec" id="select_orden_trabajo" class="form-control">
                                             <option value="0">-Orden de trabajo-</option>                                       
                                            </select>
                                     </div>

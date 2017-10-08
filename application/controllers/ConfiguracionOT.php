@@ -53,7 +53,7 @@ class ConfiguracionOT extends CI_Controller {
 				$json["response_code"] = "500";
 			}else{
 				$json["response_code"] = "200";
-				$json["byProyect"] = $ordenProy;
+				$json["ordenesbyproyect"] = $ordenProy;
 			}
 		}
 		echo json_encode($json);
