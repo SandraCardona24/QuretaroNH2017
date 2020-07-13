@@ -70,3 +70,4 @@ insert into tarea (ID_TA,DESC_TA ,FEC_IN_TA ,FEC_FN_TA ,HORAS_TA ,ID_ESTATUS )va
 
 insert into det_rec_proy(ID_PROYECT,ID_RECURSO,ID_TAREA ) values(1,1,1);
 insert into det_rec_proy(ID_PROYECT,ID_RECURSO,ID_TAREA ) values(1,2,1);
+**Hello**
